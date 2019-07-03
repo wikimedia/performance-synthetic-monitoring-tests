@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "eslint . --ext .json --ext .js",
+    "lint:fix": "eslint . --fix --ext .json --ext .js"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-plugin-json": "^1.4.0",
+    "eslint-config-wikimedia": "^0.12.0"
+  }
+}

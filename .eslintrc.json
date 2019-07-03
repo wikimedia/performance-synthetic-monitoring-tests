@@ -1,0 +1,10 @@
+{
+  "extends": "wikimedia",
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "env": {
+    "node": true
+  },
+  "plugins": ["json"]
+}

@@ -1,0 +1,27 @@
+{
+  "extends": "/config/secrets.json",
+  "browsertime": {
+    "connectivity": {
+      "engine": "external",
+      "profile": "cable"
+    },
+    "visualElements": true,
+    "iterations": 1,
+    "browser": "chrome",
+    "video": true,
+    "visualMetric": true
+  },
+  "chrome": {
+    "collectConsoleLog": true,
+    "includeResponseBodies": "html",
+    "enableTraceScreenshots": true
+  },
+  "cpu": true,
+  "gzipHAR": true,
+  "html": {
+    "fetchHARFiles": true
+  },
+  "screenshot": {
+    "type": "jpg"
+  }
+}

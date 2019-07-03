@@ -1,0 +1,30 @@
+{
+  "extends": "/config/secrets.json",
+  "browsertime": {
+    "connectivity": {
+      "engine": "throttle",
+      "profile": "3g"
+    },
+    "mobile": true,
+    "visualElements": true,
+    "iterations": 3,
+    "browser": "chrome",
+    "video": true,
+    "visualMetric": true,
+    "chrome": {
+      "CPUThrottlingRate": 5,
+      "collectConsoleLog": true,
+      "includeResponseBodies": "html",
+      "enableTraceScreenshots": true
+    }
+  },
+  "cpu": true,
+  "gzipHAR": true,
+  "html": {
+    "fetchHARFiles": true
+  },
+  "mobile": true,
+  "screenshot": {
+    "type": "jpg"
+  }
+}
