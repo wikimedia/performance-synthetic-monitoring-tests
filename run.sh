@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_CONTAINER=sitespeedio/sitespeed.io:9.4.0
+DOCKER_CONTAINER=sitespeedio/sitespeed.io:10.0.0-alpha.1
 DOCKER_SETUP="--cap-add=NET_ADMIN  --shm-size=2g --rm --env-file /config/env -v /config:/config -v "$(pwd)":/sitespeed.io -v /etc/localtime:/etc/localtime:ro -e MAX_OLD_SPACE_SIZE=3072 "
 CONFIG="--config /sitespeed.io/config"
 BROWSERS=(chrome firefox)
@@ -53,7 +53,7 @@ done
 for url in tests/$SERVER/replay/emulatedMobile/*.txt ; do
     [ -e "$url" ] || continue
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-    docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=100 $DOCKER_CONTAINER $NAMESPACE $CONFIG/replay.json $url
+    docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=100 $DOCKER_CONTAINER $NAMESPACE $CONFIG/replayEmulatedMobile.json $url
     control
 done
 
