@@ -3,7 +3,8 @@
   "browsertime": {
     "connectivity": {
       "engine": "external",
-      "profile": "cable"
+      "profile": "custom",
+      "alias": "100"
     },
     "visualElements": true,
     "iterations": 5,
