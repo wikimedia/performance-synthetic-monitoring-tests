@@ -25,12 +25,18 @@ module.exports = async function ( context, commands ) {
 		await commands.click.byIdAndWait( 'wpLoginAttempt' );
 		// Stop and collect the measurement before the next page we want to measure
 		await commands.measure.stop();
+		await commands.wait.byTime( 21000 );
+		await commands.js.run( 'document.body.innerHTML = ""; document.body.style.backgroundColor = "white";' );
 		// Measure the Barack Obama page as a logged in user
 		await commands.measure.start( 'https://en.wikipedia.org/wiki/Barack_Obama' );
 		// And then measure the Facebook page
+		await commands.wait.byTime( 21000 );
+		await commands.js.run( 'document.body.innerHTML = ""; document.body.style.backgroundColor = "white";' );
 		await commands.measure.start(
 			'https://en.wikipedia.org/wiki/Facebook'
 		);
+		await commands.wait.byTime( 21000 );
+		await commands.js.run( 'document.body.innerHTML = ""; document.body.style.backgroundColor = "white";' );
 		// And then measure the Sweden page
 		return commands.measure.start( 'https://en.wikipedia.org/wiki/Sweden' );
 	} catch ( e ) {
