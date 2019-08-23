@@ -19,6 +19,9 @@ module.exports = async function ( context, commands ) {
 		// Start the measurement before we click on the
 		// submit button. Sitespeed.io will start the video recording
 		// and prepare everything.
+		// But first we hide all elements to avoid a too early first visual change caused
+		// by the submit button.
+		await commands.js.run( 'for (let node of document.body.childNodes) { if (node.style) node.style.display = "none";}' );
 		await commands.measure.start( 'login' );
 		// Find the sumbit button and click it and then wait
 		// for the pageCompleteCheck to finish
