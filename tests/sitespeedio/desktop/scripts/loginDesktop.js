@@ -1,4 +1,6 @@
 module.exports = async function ( context, commands ) {
+	commands.meta.setTitle( 'Test as a logged in user' );
+	commands.meta.setDescription( 'Login the user with an empty browser cache, then visit Obama, Facebook and Sweden.' );
 	// We start by navigating to the login page.
 	await commands.navigate(
 		'https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Main+Page'
