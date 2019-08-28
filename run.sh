@@ -57,7 +57,6 @@ for url in tests/$SERVER/replay/emulatedMobile/*.txt ; do
     control
 done
 
-# We run WebPageTest runs to verify the WebPageTest functionality and dashboards
 for url in tests/$SERVER/webpagetest/desktop/urls/*.txt ; do
     [ -e "$url" ] || continue
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
@@ -65,7 +64,13 @@ for url in tests/$SERVER/webpagetest/desktop/urls/*.txt ; do
     control
 done
 
-# You can also test using WebPageTest scripts
+for url in tests/$SERVER/webpagetest/emulatedMobile/urls/*.txt ; do
+    [ -e "$url" ] || continue
+    NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
+    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetestEmulatedMobile.json $url
+    control
+done
+
 for script in tests/$SERVER/webpagetest/desktop/scripts/* ; do
     [ -e "$script" ] || continue
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${script%%.*})"
