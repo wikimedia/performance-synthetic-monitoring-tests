@@ -69,7 +69,7 @@ for url in tests/$SERVER/webpagetest/desktop/urls/*.txt ; do
     for browser in "${BROWSERS[@]}"
       do
         NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-        docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest.json --webpagetest.location "$WPT_LOCATION:$browser" $url
+        docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest.json --browsertime.video false --webpagetest.location "$WPT_LOCATION:$browser" $url
         control
       done
 done
@@ -77,14 +77,14 @@ done
 for url in tests/$SERVER/webpagetest/emulatedMobile/urls/*.txt ; do
     [ -e "$url" ] || continue
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetestEmulatedMobile.json $url
+    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetestEmulatedMobile.json --browsertime.video false $url
     control
 done
 
 for script in tests/$SERVER/webpagetest/desktop/scripts/* ; do
     [ -e "$script" ] || continue
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${script%%.*})"
-    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest.json --webpagetest.file $script https://www.example.org/
+    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest.json --webpagetest.file $script --browsertime.video false https://www.example.org/
     control
 done
 
