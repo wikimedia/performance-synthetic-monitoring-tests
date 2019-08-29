@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_CONTAINER=sitespeedio/sitespeed.io:10.0.0-alpha.1
+DOCKER_CONTAINER=sitespeedio/sitespeed.io:10.0.0-alpha.2
 DOCKER_SETUP="--cap-add=NET_ADMIN  --shm-size=2g --rm --env-file /config/env -v /config:/config -v "$(pwd)":/sitespeed.io -v /etc/localtime:/etc/localtime:ro -e MAX_OLD_SPACE_SIZE=3072 "
 CONFIG="--config /sitespeed.io/config"
 BROWSERS=(chrome firefox)
