@@ -84,7 +84,7 @@ done
 for script in tests/$SERVER/webpagetest/desktop/scripts/* ; do
     [ -e "$script" ] || continue
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${script%%.*})"
-    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest.json --plugins.remove browsertime --webpagetest.file $script https://www.example.org/
+    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest.json --webpagetest.file $script https://www.example.org/
     control
 done
 
