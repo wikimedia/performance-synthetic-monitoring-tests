@@ -6,6 +6,7 @@
       "profile": "custom",
       "alias": "100"
     },
+    "mobile": true,
     "visualElements": true,
     "iterations": 3,
     "browser": "chrome",
