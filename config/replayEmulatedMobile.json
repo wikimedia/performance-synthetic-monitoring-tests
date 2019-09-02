@@ -6,7 +6,6 @@
       "profile": "custom",
       "alias": "100"
     },
-    "mobile": true,
     "visualElements": true,
     "iterations": 3,
     "browser": "chrome",
@@ -20,6 +19,7 @@
     "enableTraceScreenshots": true
   },
   "cpu": true,
+  "mobile": true,
   "gzipHAR": true,
   "html": {
     "fetchHARFiles": true

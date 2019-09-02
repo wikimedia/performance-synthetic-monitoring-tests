@@ -5,7 +5,6 @@
       "engine": "throttle",
       "profile": "3g"
     },
-    "mobile": true,
     "visualElements": true,
     "iterations": 3,
     "browser": "chrome",
