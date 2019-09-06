@@ -10,12 +10,15 @@
     "iterations": 5,
     "browser": "chrome",
     "video": true,
-    "visualMetric": true
-  },
-  "chrome": {
-    "collectConsoleLog": true,
-    "includeResponseBodies": "html",
-    "enableTraceScreenshots": true
+    "visualMetric": true,
+    "chrome": {
+      "collectConsoleLog": true,
+      "includeResponseBodies": "html",
+      "enableTraceScreenshots": true
+    },
+    "firefox": {
+      "includeResponseBodies": "html"
+    }
   },
   "cpu": true,
   "gzipHAR": true,
