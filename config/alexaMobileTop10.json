@@ -1,5 +1,5 @@
 {
-  "extends": "./emulatedMobile.json",
+  "extends": "./config/emulatedMobile.json",
   "browsertime": {
     "iterations": 1
   }

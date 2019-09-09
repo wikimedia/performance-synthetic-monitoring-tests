@@ -1,5 +1,5 @@
 {
-  "extends": "./webpagetest.json",
+  "extends": "./config/webpagetest.json",
   "webpagetest": {
     "location": "us-east:Firefox"
   }
