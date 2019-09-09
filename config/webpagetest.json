@@ -9,7 +9,7 @@
     "runs": 5,
     "connectivity": "Cable",
     "host": "wpt.wmftest.org",
-    "location": "us-east-test:Chrome"
+    "location": "us-east:Chrome"
   },
   "plugins": {
     "remove": "browsertime"

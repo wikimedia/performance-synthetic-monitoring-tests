@@ -9,7 +9,7 @@
     "runs": 5,
     "connectivity": "3GFast",
     "host": "wpt.wmftest.org",
-    "location": "us-east-test:Chrome",
+    "location": "us-east:Chrome",
     "emulateMobile": true
   },
   "plugins": {
