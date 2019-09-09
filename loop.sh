@@ -48,8 +48,6 @@ do
   fi
 done
 
-
-
 # To get throttle to work (https://github.com/sitespeedio/throttle)!
 sudo modprobe ifb numifbs=1
 
@@ -57,9 +55,9 @@ while true
 do
     ## For each iteration, we pull the latest code from git and run
     git pull
-    for test in "${TESTS[@]}"
+    for TEST in "${TESTS[@]}"
     do
-      source run.sh $test
+      source run.sh $TEST
       result=$?
       if [ $result -ne 0 ]; then
           echo 'Stop the loop $result' 
