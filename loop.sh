@@ -7,14 +7,14 @@ exec > $LOGFILE 2>&1
 # the tests to finish (tail -f /tmp/sitespeed.io)
 CONTROL_FILE="./sitespeed.run"
 
-# The first parameter is the server name, so we can find the right tests to run
+# The first parameter is the test name, so we can find the right tests to run
 if [ -z "$1" ] 
 then
-    echo "Missing server input! You need to run with a parameter that gives the path to the configuration "
+    echo "Missing test input! You need to run with a parameter that gives the path to the configuration "
     exit 1
 fi
 
-TEST=$1
+TESTS=( "$@" )
 
 # You cannot start multiple instances!
 if [ -f "$CONTROL_FILE" ]
@@ -38,12 +38,16 @@ function control() {
   fi
 }
 
-# Verify that folder exist
-if [ ! -d "tests/$TEST" ]; then
-  echo "The directory tests/$TEST was not found, you need to check your start parameter"
-  rm $CONTROL_FILE
-  exit 1
-fi
+# Verify that folders exist
+for test in "${TESTS[@]}"
+do
+	if [ ! -d "tests/$test" ]; then
+    echo "The directory tests/$test was not found, you need to check your start parameter"
+    rm $CONTROL_FILE
+    exit 1
+  fi
+done
+
 
 
 # To get throttle to work (https://github.com/sitespeedio/throttle)!
@@ -53,10 +57,13 @@ while true
 do
     ## For each iteration, we pull the latest code from git and run
     git pull
-    source run.sh $TEST
-    result=$?
-    if [ $result -ne 0 ]; then
-        echo 'Stop the loop $result' 
-        exit 0;
-    fi
+    for test in "${TESTS[@]}"
+    do
+      source run.sh $test
+      result=$?
+      if [ $result -ne 0 ]; then
+          echo 'Stop the loop $result' 
+          exit 0;
+      fi
+    done
 done
