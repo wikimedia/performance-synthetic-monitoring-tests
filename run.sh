@@ -10,7 +10,7 @@ WPT_LOCATION=us-east-test
 # We run many tests to verify the functionality of sitespeed.io and you can simplify this by
 # removing things you don't need!
 
-for url in tests/$SERVER/desktop/urls/*.txt ; do
+for url in tests/$TEST/desktop/urls/*.txt ; do
   [ -e "$url" ] || continue
   for browser in "${BROWSERS[@]}"
     do
@@ -24,7 +24,7 @@ for url in tests/$SERVER/desktop/urls/*.txt ; do
     done
 done
 
-for script in tests/$SERVER/desktop/scripts/*.js ; do
+for script in tests/$TEST/desktop/scripts/*.js ; do
     [ -e "$script" ] || continue
     for browser in "${BROWSERS[@]}"
       do
@@ -36,7 +36,7 @@ for script in tests/$SERVER/desktop/scripts/*.js ; do
       done
 done
 
-for url in tests/$SERVER/emulatedMobile/urls/*.txt ; do
+for url in tests/$TEST/emulatedMobile/urls/*.txt ; do
     [ -e "$url" ] || continue
     POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
     [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="emulatedMobile.json"
@@ -45,7 +45,7 @@ for url in tests/$SERVER/emulatedMobile/urls/*.txt ; do
     control
 done
 
-for script in tests/$SERVER/emulatedMobile/scripts/*.js ; do
+for script in tests/$TEST/emulatedMobile/scripts/*.js ; do
     [ -e "$script" ] || continue
     POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
     [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="emulatedMobile.json"
@@ -55,7 +55,7 @@ for script in tests/$SERVER/emulatedMobile/scripts/*.js ; do
 done
 
 # We run WebPageReplay just to verify that it works
-for url in tests/$SERVER/replay/desktop/*.txt ; do
+for url in tests/$TEST/replay/desktop/*.txt ; do
     [ -e "$url" ] || continue
     for browser in "${BROWSERS[@]}"
       do
@@ -68,7 +68,7 @@ for url in tests/$SERVER/replay/desktop/*.txt ; do
       done
 done
 
-for url in tests/$SERVER/replay/emulatedMobile/*.txt ; do
+for url in tests/$TEST/replay/emulatedMobile/*.txt ; do
     [ -e "$url" ] || continue
     POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
     [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="replayEmulatedMobile.json"
@@ -77,7 +77,7 @@ for url in tests/$SERVER/replay/emulatedMobile/*.txt ; do
     control
 done
 
-for url in tests/$SERVER/webpagetest/desktop/urls/*.txt ; do
+for url in tests/$TEST/webpagetest/desktop/urls/*.txt ; do
     [ -e "$url" ] || continue
     for browser in "${BROWSERS[@]}"
       do
@@ -87,14 +87,14 @@ for url in tests/$SERVER/webpagetest/desktop/urls/*.txt ; do
       done
 done
 
-for url in tests/$SERVER/webpagetest/emulatedMobile/urls/*.txt ; do
+for url in tests/$TEST/webpagetest/emulatedMobile/urls/*.txt ; do
     [ -e "$url" ] || continue
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
     docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetestEmulatedMobile.json --browsertime.video false $url
     control
 done
 
-for script in tests/$SERVER/webpagetest/desktop/scripts/* ; do
+for script in tests/$TEST/webpagetest/desktop/scripts/* ; do
     [ -e "$script" ] || continue
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${script%%.*})"
     docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest.json --webpagetest.file $script --browsertime.video false https://www.example.org/

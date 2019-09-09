@@ -14,7 +14,7 @@ then
     exit 1
 fi
 
-SERVER=$1
+TEST=$1
 
 # You cannot start multiple instances!
 if [ -f "$CONTROL_FILE" ]
@@ -39,8 +39,8 @@ function control() {
 }
 
 # Verify that folder exist
-if [ ! -d "tests/$SERVER" ]; then
-  echo "The directory tests/$SERVER was not found, you need to check your start parameter"
+if [ ! -d "tests/$TEST" ]; then
+  echo "The directory tests/$TEST was not found, you need to check your start parameter"
   rm $CONTROL_FILE
   exit 1
 fi
@@ -53,7 +53,7 @@ while true
 do
     ## For each iteration, we pull the latest code from git and run
     git pull
-    source run.sh $SERVER
+    source run.sh $TEST
     result=$?
     if [ $result -ne 0 ]; then
         echo 'Stop the loop $result' 
