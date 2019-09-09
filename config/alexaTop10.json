@@ -1,0 +1,6 @@
+{
+  "extends": "./desktop.json",
+  "browsertime": {
+    "iterations": 3
+  }
+}

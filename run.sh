@@ -16,8 +16,10 @@ for url in tests/$SERVER/desktop/urls/*.txt ; do
     do
       # Note: If you use dots in your name you need to replace them before sending to Graphite
       # GRAPHITE_NAMESPACE=${GRAPHITE_NAMESPACE//[-.]/_}
+      POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
+      [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="desktop.json"
       NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-      docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/desktop.json -b $browser $url
+      docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE -b $browser $url
       control
     done
 done
@@ -26,23 +28,29 @@ for script in tests/$SERVER/desktop/scripts/*.js ; do
     [ -e "$script" ] || continue
     for browser in "${BROWSERS[@]}"
       do
+        POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
+        [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="desktop.json"
         NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${script%%.*})"
-        docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/desktop.json --multi -b $browser --spa $script
+        docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE --multi -b $browser --spa $script
         control
       done
 done
 
 for url in tests/$SERVER/emulatedMobile/urls/*.txt ; do
     [ -e "$url" ] || continue
+    POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
+    [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="emulatedMobile.json"
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/emulatedMobile.json $url
+    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE $url
     control
 done
 
 for script in tests/$SERVER/emulatedMobile/scripts/*.js ; do
     [ -e "$script" ] || continue
+    POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
+    [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="emulatedMobile.json"
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${script%%.*})"
-    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/emulatedMobile.json --multi --spa $script
+    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE --multi --spa $script
     control
 done
 
@@ -51,16 +59,21 @@ for url in tests/$SERVER/replay/desktop/*.txt ; do
     [ -e "$url" ] || continue
     for browser in "${BROWSERS[@]}"
       do
+        POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
+        [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="replay.json"
         NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-        docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=100 $DOCKER_CONTAINER $NAMESPACE $CONFIG/replay.json -b $browser $url
+        NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
+        docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=100 $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE -b $browser $url
         control
       done
 done
 
 for url in tests/$SERVER/replay/emulatedMobile/*.txt ; do
     [ -e "$url" ] || continue
+    POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
+    [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="replayEmulatedMobile.json"
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-    docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=100 $DOCKER_CONTAINER $NAMESPACE $CONFIG/replayEmulatedMobile.json $url
+    docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=100 $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE $url
     control
 done
 
