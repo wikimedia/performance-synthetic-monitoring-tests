@@ -1,5 +1,5 @@
 {
-  "extends": "./desktop.json",
+  "extends": "./emulatedMobile.json",
   "browsertime": {
     "iterations": 1
   }
