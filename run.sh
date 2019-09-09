@@ -69,7 +69,7 @@ for url in tests/$SERVER/webpagetest/desktop/urls/*.txt ; do
     for browser in "${BROWSERS[@]}"
       do
         NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-        docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest.json --browsertime.video false --webpagetest.location "$WPT_LOCATION:$browser" $url
+        docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest-$browser.json --browsertime.video false $url
         control
       done
 done

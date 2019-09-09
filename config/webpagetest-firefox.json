@@ -1,0 +1,6 @@
+{
+  "extends": "./webpagetest.json",
+  "webpagetest": {
+    "location": "us-east:Firefox"
+  }
+}

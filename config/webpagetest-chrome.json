@@ -1,0 +1,7 @@
+{
+  "extends": "./webpagetest.json",
+  "webpagetest": {
+    "timeline": true,
+    "location": "us-east:Chrome"
+  }
+}

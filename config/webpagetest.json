@@ -3,13 +3,11 @@
   "webpagetest": {
     "median": "SpeedIndex",
     "medianrun": "fastest",
-    "timeline": true,
     "bodies": true,
     "first": true,
     "runs": 5,
     "connectivity": "Cable",
-    "host": "wpt.wmftest.org",
-    "location": "us-east:Chrome"
+    "host": "wpt.wmftest.org"
   },
   "plugins": {
     "remove": "browsertime"
