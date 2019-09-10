@@ -1,6 +1,20 @@
 {
-  "extends": "./config/webpagetest.json",
-  "webpagetest": {
+  "extends": "/config/secrets.json",    
+    "webpagetest": {
+    "median": "SpeedIndex",
+    "medianrun": "fastest",
+    "bodies": true,
+    "first": true,
+    "runs": 5,
+    "connectivity": "Cable",
+    "host": "wpt.wmftest.org",
     "location": "us-east:Firefox"
+  },
+  "plugins": {
+    "remove": "browsertime"
+  },
+  "gzipHAR": true,
+  "html": {
+    "fetchHARFiles": true
   }
 }
