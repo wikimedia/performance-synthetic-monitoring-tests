@@ -8,7 +8,9 @@
     "runs": 5,
     "connectivity": "Cable",
     "host": "wpt.wmftest.org",
-    "location": "us-east:Firefox"
+    "location": "us-east:Firefox",
+    "timeout": 2400,
+    "priority": 3
   },
   "plugins": {
     "remove": "browsertime"

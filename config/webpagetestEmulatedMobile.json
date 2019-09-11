@@ -10,7 +10,9 @@
     "connectivity": "3GFast",
     "host": "wpt.wmftest.org",
     "location": "us-east:Chrome",
-    "emulateMobile": true
+    "emulateMobile": true,
+    "timeout": 2400,
+    "priority": 3
   },
   "plugins": {
     "remove": "browsertime"

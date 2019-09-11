@@ -9,7 +9,9 @@
     "connectivity": "Cable",
     "host": "wpt.wmftest.org",
     "timeline": true,
-    "location": "us-east:Chrome"
+    "location": "us-east:Chrome",
+    "timeout": 2400,
+    "priority": 3
   },
   "plugins": {
     "remove": "browsertime"
