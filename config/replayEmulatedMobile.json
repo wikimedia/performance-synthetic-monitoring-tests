@@ -12,7 +12,6 @@
     "video": true,
     "visualMetric": true,
     "chrome": {
-      "CPUThrottlingRate": 5,
       "collectConsoleLog": true,
       "includeResponseBodies": "html",
       "enableTraceScreenshots": true
