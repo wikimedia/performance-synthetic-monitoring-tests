@@ -62,7 +62,6 @@ for url in tests/$TEST/replay/desktop/*.txt ; do
         POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
         [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="replay.json"
         NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-        NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
         docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=100 $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE -b $browser $url
         control
       done
