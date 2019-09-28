@@ -100,5 +100,5 @@ for script in tests/$TEST/webpagetest/desktop/scripts/* ; do
     docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest.json --webpagetest.file $script --browsertime.video false https://www.example.org/
     control
 done
-
+docker volume prune -f
 sleep 20
