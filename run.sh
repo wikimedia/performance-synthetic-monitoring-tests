@@ -19,7 +19,7 @@ for url in tests/$TEST/desktop/urls/*.txt ; do
       POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
       [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="desktop.json"
       NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-      docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE -b $browser $url
+      docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE -b $browser --browsertime.video false $url
       control
     done
 done
@@ -31,7 +31,7 @@ for script in tests/$TEST/desktop/scripts/*.js ; do
         POTENTIAL_CONFIG="./config/$(basename ${script%%.*}).json"
         [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${script%.*}).json" || CONFIG_FILE="desktop.json"
         NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${script%%.*})"
-        docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE --multi -b $browser --spa $script
+        docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE --multi -b $browser --spa --browsertime.video false $script
         control
       done
 done
@@ -41,7 +41,7 @@ for url in tests/$TEST/emulatedMobile/urls/*.txt ; do
     POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
     [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="emulatedMobile.json"
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE $url
+    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE --browsertime.video false $url
     control
 done
 
@@ -50,7 +50,7 @@ for script in tests/$TEST/emulatedMobile/scripts/*.js ; do
     POTENTIAL_CONFIG="./config/$(basename ${script%%.*}).json"
     [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${script%.*}).json" || CONFIG_FILE="emulatedMobile.json"
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${script%%.*})"
-    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE --multi --spa $script
+    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE --multi --spa --browsertime.video false $script
     control
 done
 
@@ -62,7 +62,7 @@ for url in tests/$TEST/replay/desktop/*.txt ; do
         POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
         [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="replay.json"
         NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-        docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=100 $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE -b $browser $url
+        docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=100 $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE -b $browser --browsertime.video false $url
         control
       done
 done
@@ -72,7 +72,7 @@ for url in tests/$TEST/replay/emulatedMobile/*.txt ; do
     POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
     [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="replayEmulatedMobile.json"
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-    docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=100 $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE $url
+    docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=100 $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE --browsertime.video false $url
     control
 done
 
