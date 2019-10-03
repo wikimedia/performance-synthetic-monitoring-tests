@@ -26,5 +26,8 @@
   },
   "screenshot": {
     "type": "jpg"
+  },
+   "plugins": {
+    "remove" : ["thirdparty"]
   }
 }

@@ -26,5 +26,8 @@
   "mobile": true,
   "screenshot": {
     "type": "jpg"
+  },
+   "plugins": {
+    "remove" : ["thirdparty"]
   }
 }
