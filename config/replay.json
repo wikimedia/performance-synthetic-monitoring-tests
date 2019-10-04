@@ -21,6 +21,7 @@
     }
   },
   "cpu": true,
+  "utc": true,
   "gzipHAR": true,
   "html": {
     "fetchHARFiles": true
@@ -28,7 +29,7 @@
   "screenshot": {
     "type": "jpg"
   },
-   "plugins": {
-    "remove" : ["thirdparty"]
+  "plugins": {
+    "remove": ["thirdparty"]
   }
 }

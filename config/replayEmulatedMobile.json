@@ -19,6 +19,7 @@
     }
   },
   "cpu": true,
+  "utc": true,
   "mobile": true,
   "gzipHAR": true,
   "html": {
@@ -27,7 +28,7 @@
   "screenshot": {
     "type": "jpg"
   },
-   "plugins": {
-    "remove" : ["thirdparty"]
+  "plugins": {
+    "remove": ["thirdparty"]
   }
 }

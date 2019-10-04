@@ -18,6 +18,7 @@
     "remove": "browsertime"
   },
   "gzipHAR": true,
+  "utc": true,
   "html": {
     "fetchHARFiles": true
   }

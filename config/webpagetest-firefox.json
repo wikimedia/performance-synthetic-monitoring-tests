@@ -1,6 +1,6 @@
 {
-  "extends": "/config/secrets.json",    
-    "webpagetest": {
+  "extends": "/config/secrets.json",
+  "webpagetest": {
     "median": "SpeedIndex",
     "medianrun": "fastest",
     "bodies": true,
@@ -16,6 +16,7 @@
     "remove": "browsertime"
   },
   "gzipHAR": true,
+  "utc": true,
   "html": {
     "fetchHARFiles": true
   }
