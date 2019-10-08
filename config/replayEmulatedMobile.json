@@ -23,7 +23,9 @@
   "mobile": true,
   "gzipHAR": true,
   "html": {
-    "fetchHARFiles": true
+    "fetchHARFiles": true,
+    "compareURL": "https://compare.sitespeed.io/"
+
   },
   "screenshot": {
     "type": "jpg"
