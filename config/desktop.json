@@ -16,7 +16,7 @@
       "includeResponseBodies": "html"
     },
     "firefox": {
-      "includeResponseBodies": "html"
+      "includeResponseBodies": "all"
     }
   },
   "cpu": true,
