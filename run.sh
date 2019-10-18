@@ -93,6 +93,13 @@ for url in tests/$TEST/webpagetest/emulatedMobile/urls/*.txt ; do
     control
 done
 
+for url in tests/$TEST/webpagetest/emulatedMobile/urls/*.txt ; do
+    [ -e "$url" ] || continue
+    NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
+    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetestEmulatedMobileNative.json --browsertime.video false $url
+    control
+done
+
 for script in tests/$TEST/webpagetest/desktop/scripts/* ; do
     [ -e "$script" ] || continue
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${script%%.*})"
