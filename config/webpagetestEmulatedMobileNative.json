@@ -1,5 +1,5 @@
 {
-  "extends": "./config/webpagetestEmulatedMobile",
+  "extends": "./config/webpagetestEmulatedMobile.json",
   "webpagetest": {
     "connectivity": "Native"
   }
