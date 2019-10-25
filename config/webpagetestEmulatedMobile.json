@@ -12,7 +12,7 @@
     "location": "us-east:Chrome",
     "emulateMobile": true,
     "timeout": 2400,
-    "priority": 3
+    "priority": 6
   },
   "plugins": {
     "remove": "browsertime"
