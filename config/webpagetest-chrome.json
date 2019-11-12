@@ -10,8 +10,7 @@
     "host": "wpt.wmftest.org",
     "timeline": true,
     "location": "us-east:Chrome",
-    "timeout": 2400,
-    "priority": 6
+    "timeout": 2400
   },
   "plugins": {
     "remove": "browsertime"
