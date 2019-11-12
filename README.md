@@ -1,6 +1,6 @@
 # Configuration files for synthetic monitoring tests
 
-Work in progress :)
+This repo contains configuration files for running Browsertime/sitespeed.io/WebPageReplay and WebPageTest.
 
 ## What is synthetic monitoring?
 
