@@ -13,11 +13,11 @@
     "visualMetric": true,
     "chrome": {
       "collectConsoleLog": true,
-      "includeResponseBodies": "html",
+      "includeResponseBodies": "all",
       "enableTraceScreenshots": true
     },
     "firefox": {
-      "includeResponseBodies": "html"
+      "includeResponseBodies": "all"
     }
   },
   "cpu": true,

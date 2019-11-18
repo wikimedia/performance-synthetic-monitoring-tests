@@ -13,7 +13,7 @@
     "chrome": {
       "collectConsoleLog": true,
       "enableTraceScreenshots": true,
-      "includeResponseBodies": "html"
+      "includeResponseBodies": "all"
     },
     "firefox": {
       "includeResponseBodies": "all"

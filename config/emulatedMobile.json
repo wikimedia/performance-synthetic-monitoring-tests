@@ -13,7 +13,7 @@
     "chrome": {
       "CPUThrottlingRate": 5,
       "collectConsoleLog": true,
-      "includeResponseBodies": "html",
+      "includeResponseBodies": "all",
       "enableTraceScreenshots": true
     }
   },
