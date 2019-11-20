@@ -31,6 +31,6 @@
     "type": "jpg"
   },
   "plugins": {
-    "remove": ["thirdparty"]
+    "remove": ["thirdparty","coach"]
   }
 }
