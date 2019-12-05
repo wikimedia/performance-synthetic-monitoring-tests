@@ -19,7 +19,9 @@
   },
   "cpu": true,
   "utc": true,
-
+  "pageLoadStrategy": "none",
+  "pageCompleteCheckStartWait": 4000,
+  "pageCompleteCheckPollTimeout": 1000,
   "gzipHAR": true,
   "html": {
     "fetchHARFiles": true,

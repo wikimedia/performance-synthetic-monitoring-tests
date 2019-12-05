@@ -16,9 +16,13 @@
       "includeResponseBodies": "all"
     },
     "firefox": {
-      "includeResponseBodies": "all"
+      "includeResponseBodies": "all",
+      "disableBrowsertimeExtension": true
     }
   },
+  "pageLoadStrategy": "none",
+  "pageCompleteCheckStartWait": 5000,
+  "pageCompleteCheckPollTimeout": 1000,
   "cpu": true,
   "utc": true,
   "gzipHAR": true,
@@ -31,6 +35,6 @@
     "type": "jpg"
   },
   "plugins": {
-    "remove" : ["thirdparty"]
+    "remove": ["thirdparty"]
   }
 }
