@@ -18,6 +18,9 @@
       "enableTraceScreenshots": true
     }
   },
+  "pageLoadStrategy": "none",
+  "pageCompleteCheckStartWait": 4000,
+  "pageCompleteCheckPollTimeout": 1000,
   "cpu": true,
   "utc": true,
   "mobile": true,
@@ -25,12 +28,11 @@
   "html": {
     "fetchHARFiles": true,
     "compareURL": "https://compare.sitespeed.io/"
-
   },
   "screenshot": {
     "type": "jpg"
   },
   "plugins": {
-    "remove": ["thirdparty","coach"]
+    "remove": ["thirdparty", "coach"]
   }
 }
