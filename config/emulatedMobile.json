@@ -8,7 +8,7 @@
     "visualElements": true,
     "iterations": 3,
     "browser": "chrome",
-    "video": true,
+    "video": false,
     "visualMetric": true,
     "chrome": {
       "CPUThrottlingRate": 5,
