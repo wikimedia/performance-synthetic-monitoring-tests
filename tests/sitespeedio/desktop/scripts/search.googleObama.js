@@ -6,7 +6,7 @@ module.exports = async function ( context, commands ) {
 	await commands.click.bySelectorAndWait( 'input[name=btnK]' );
 	await commands.js.run( 'for (let node of document.body.childNodes) { if (node.style) node.style.display = "none";}' );
 	await commands.measure.start( 'googleObama' );
-	await commands.click.byXpath( "//a[@href='https://en.wikipedia.org/wiki/Barack_Obama']" );
+	await commands.click.byXpathAndWait( "//a[@href='https://en.wikipedia.org/wiki/Barack_Obama']" );
 	// The extra wait is needed to get the search work in Firefox
 	// https://phabricator.wikimedia.org/T235407
 	await commands.wait.byTime( 2000 );
