@@ -8,6 +8,6 @@ module.exports = async function ( context, commands ) {
 	await commands.wait.byTime( 2000 );
 	await commands.js.run( 'for (let node of document.body.childNodes) { if (node.style) node.style.display = "none";}' );
 	await commands.measure.start( 'searchPageObama' );
-	await commands.click.byXpath( "//a[@href='/wiki/Barack_Obama']" );
+	await commands.click.byXpathAndWait( "//a[@href='/wiki/Barack_Obama']" );
 	return commands.measure.stop();
 };
