@@ -9,7 +9,8 @@
     "connectivity": "Cable",
     "host": "wpt.wmftest.org",
     "location": "us-east:Firefox",
-    "timeout": 2400
+    "timeout": 2400,
+    "private": false
   },
   "plugins": {
     "remove": "browsertime"

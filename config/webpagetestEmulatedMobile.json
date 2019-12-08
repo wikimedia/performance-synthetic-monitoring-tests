@@ -11,7 +11,8 @@
     "host": "wpt.wmftest.org",
     "location": "us-east:Chrome",
     "emulateMobile": true,
-    "timeout": 2400
+    "timeout": 2400,
+    "private": false
   },
   "plugins": {
     "remove": "browsertime"
