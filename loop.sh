@@ -54,6 +54,7 @@ sudo modprobe ifb numifbs=1
 while true
 do
     ## For each iteration, we pull the latest code from git and run
+    git fetch origin master
     LINES_CHANGED=$(git rev-list HEAD...origin/master --count)
     if [ "$LINES_CHANGED" -gt 0 ];then
       # Remove the container since it could be a new version
