@@ -1,0 +1,6 @@
+{
+  "extends": "./config/desktop.json",
+  "browsertime": {
+    "iterations": 1
+  }
+}
