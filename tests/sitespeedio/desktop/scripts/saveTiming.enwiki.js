@@ -33,7 +33,7 @@ module.exports = async function ( context, commands ) {
 			"return document.getElementsByClassName('oo-ui-tool-link ve-ui-toolbar-saveButton')[0];"
 		);
 		await saveButton.click();
-		await commands.wait.byTime( waitTime );
+		await commands.wait.byTime( waitTime * 2 );
 
 		// Add the save comment
 		await commands.js.run(
