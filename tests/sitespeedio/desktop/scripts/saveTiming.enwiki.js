@@ -23,9 +23,7 @@ module.exports = async function ( context, commands ) {
 		// Edit the page
 		await commands.click.byPartialLinkText( 'Edit' );
 		await commands.wait.byTime( waitTime );
-		await commands.js.run(
-			"document.getElementById('mwAg').innerHTML='Edited:' +  (new Date()).toString();"
-		);
+		await commands.js.run( "document.getElementsByClassName('ve-ce-branchNode ve-ce-documentNode ve-ce-attachedRootNode ve-ce-rootNode mw-content-ltr mw-parser-output')[0].innerText='Edited:' +  (new Date()).toString();" );
 		await commands.wait.byTime( waitTime );
 
 		// Click the save button
