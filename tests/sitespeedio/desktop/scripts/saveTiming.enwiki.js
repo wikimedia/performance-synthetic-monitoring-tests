@@ -54,6 +54,6 @@ module.exports = async function ( context, commands ) {
 		return commands.measure.stop();
 	} catch ( e ) {
 		context.log.error( 'Could not edit', e );
-		await commands.screenshot.take( 'error' );
+		// await commands.screenshot.take( 'error' );
 	}
 };
