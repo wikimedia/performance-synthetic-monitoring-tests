@@ -1,14 +1,10 @@
 #!/bin/bash
 
-DOCKER_CONTAINER=sitespeedio/sitespeed.io:11.7.2
+DOCKER_CONTAINER=sitespeedio/sitespeed.io:11.9.3-b
 DOCKER_SETUP="--cap-add=NET_ADMIN  --shm-size=2g --rm -v /config:/config -v "$(pwd)":/sitespeed.io -v /etc/localtime:/etc/localtime:ro -e MAX_OLD_SPACE_SIZE=3072 --name sitespeedio"
 CONFIG="--config /sitespeed.io/config"
 BROWSERS=(chrome firefox)
 WPT_LOCATION=us-east-test
-
-# We loop through all directories we have
-# We run many tests to verify the functionality of sitespeed.io and you can simplify this by
-# removing things you don't need!
 
 for url in tests/$TEST/desktop/urls/*.txt ; do
   [ -e "$url" ] || continue
@@ -54,13 +50,12 @@ for script in tests/$TEST/emulatedMobile/scripts/*.js ; do
     control
 done
 
-# We run WebPageReplay just to verify that it works
 for url in tests/$TEST/replay/desktop/*.txt ; do
     [ -e "$url" ] || continue
     for browser in "${BROWSERS[@]}"
       do
         POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
-        [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="replay.json"
+        [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${url%.*}).json" || CONFIG_FILE="replay-$browser.json"
         NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
         docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=100 $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE -b $browser $url
         control

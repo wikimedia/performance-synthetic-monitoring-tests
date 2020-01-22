@@ -7,7 +7,7 @@
       "alias": "100"
     },
     "visualElements": true,
-    "iterations": 5,
+    "iterations": 9,
     "browser": "chrome",
     "video": false,
     "visualMetric": true,
@@ -15,11 +15,6 @@
       "collectConsoleLog": true,
       "includeResponseBodies": "all",
       "enableTraceScreenshots": true
-    },
-    "firefox": {
-      "includeResponseBodies": "all",
-      "disableBrowsertimeExtension": true,
-      "mozillaProPreferences": true
     }
   },
   "pageLoadStrategy": "none",

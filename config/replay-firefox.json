@@ -1,0 +1,37 @@
+{
+  "extends": "/config/secrets.json",
+  "browsertime": {
+    "connectivity": {
+      "engine": "external",
+      "profile": "custom",
+      "alias": "100"
+    },
+    "visualElements": true,
+    "iterations": 5,
+    "browser": "chrome",
+    "video": false,
+    "visualMetric": true,
+    "firefox": {
+      "includeResponseBodies": "all",
+      "disableBrowsertimeExtension": true,
+      "mozillaProPreferences": true
+    }
+  },
+  "pageLoadStrategy": "none",
+  "pageCompleteCheckStartWait": 5000,
+  "pageCompleteCheckPollTimeout": 1000,
+  "timeToSettle": 1000,
+  "cpu": true,
+  "utc": true,
+  "gzipHAR": true,
+  "html": {
+    "fetchHARFiles": true,
+    "compareURL": "https://compare.sitespeed.io/"
+  },
+  "screenshot": {
+    "type": "jpg"
+  },
+  "plugins": {
+    "remove": ["thirdparty", "coach"]
+  }
+}
