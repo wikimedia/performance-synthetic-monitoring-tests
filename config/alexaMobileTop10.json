@@ -5,5 +5,8 @@
   },
   "sustainable": {
     "enable": true
+  },
+  "axe": {
+    "enable": true
   }
 }
