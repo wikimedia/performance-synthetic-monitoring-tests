@@ -1,6 +1,7 @@
 #!/bin/bash
-
-DOCKER_CONTAINER=sitespeedio/sitespeed.io:12.1.0
+VERSION=12.2.0
+DOCKER_CONTAINER=sitespeedio/sitespeed.io:$VERSION
+WPT_DOCKER_CONTAINER=sitespeedio/sitespeed.io:$VERSION-slim
 DOCKER_SETUP="--cap-add=NET_ADMIN  --shm-size=2g --rm -v /config:/config -v "$(pwd)":/sitespeed.io -v /etc/localtime:/etc/localtime:ro -e MAX_OLD_SPACE_SIZE=3072 --name sitespeedio"
 CONFIG="--config /sitespeed.io/config"
 BROWSERS=(chrome firefox)
@@ -76,7 +77,7 @@ for url in tests/$TEST/webpagetest/desktop/urls/*.txt ; do
     for browser in "${BROWSERS[@]}"
       do
         NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-        docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest-$browser.json --browsertime.video false $url
+        docker run $DOCKER_SETUP $WPT_DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest-$browser.json --browsertime.video false $url
         control
       done
 done
@@ -84,14 +85,14 @@ done
 for url in tests/$TEST/webpagetest/emulatedMobile/urls/*.txt ; do
     [ -e "$url" ] || continue
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetestEmulatedMobile.json --browsertime.video false $url
+    docker run $DOCKER_SETUP $WPT_DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetestEmulatedMobile.json --browsertime.video false $url
     control
 done
 
 for script in tests/$TEST/webpagetest/desktop/scripts/* ; do
     [ -e "$script" ] || continue
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${script%%.*})"
-    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest.json --webpagetest.file $script --browsertime.video false https://www.example.org/
+    docker run $DOCKER_SETUP $WPT_DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest.json --webpagetest.file $script --browsertime.video false https://www.example.org/
     control
 done
 docker volume prune -f
