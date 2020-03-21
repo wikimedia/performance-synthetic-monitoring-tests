@@ -10,6 +10,8 @@
     "browser": "chrome",
     "video": false,
     "visualMetric": true,
+    "timeToSettle": 5000,
+    "delay": 5000,
     "chrome": {
       "CPUThrottlingRate": 5,
       "collectConsoleLog": true,
