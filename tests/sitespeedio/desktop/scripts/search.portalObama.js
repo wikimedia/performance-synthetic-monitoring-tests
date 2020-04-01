@@ -7,9 +7,6 @@ module.exports = async function ( context, commands ) {
 	await commands.addText.byId( 'Barack Obama', 'searchInput' );
 
 	await commands.wait.byTime( 5000 );
-	await commands.js.run(
-		'for (let node of document.body.childNodes) { if (node.style) node.style.display = "none";}'
-	);
 	await commands.measure.start( 'portalSearchObama' );
 	await commands.click.byXpathAndWait(
 		"//a[@href='https://en.wikipedia.org/wiki/Barack_Obama']"
