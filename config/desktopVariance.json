@@ -1,6 +1,0 @@
-{
-  "extends": "./config/desktop.json",
-  "browsertime": {
-     "connectivity": { "engine": "throttle", "profile": "cable", "variance":2 }
-  }
-}
