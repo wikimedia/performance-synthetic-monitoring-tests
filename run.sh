@@ -40,6 +40,8 @@ for script in tests/$TEST/desktop/editScripts/*.js ; do
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${script%%.*})"
     docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE --multi -b chrome --spa $script
     control
+    sleep 1800
+    control
 done
 
 for url in tests/$TEST/emulatedMobile/urls/*.txt ; do
