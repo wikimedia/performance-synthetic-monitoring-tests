@@ -33,6 +33,15 @@ for script in tests/$TEST/desktop/scripts/*.js ; do
       done
 done
 
+for script in tests/$TEST/desktop/editScripts/*.js ; do
+    [ -e "$script" ] || continue
+    POTENTIAL_CONFIG="./config/$(basename ${script%%.*}).json"
+    [[ -f "$POTENTIAL_CONFIG" ]] && CONFIG_FILE="$(basename ${script%.*}).json" || CONFIG_FILE="edit.json"
+    NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${script%%.*})"
+    docker run $DOCKER_SETUP $DOCKER_CONTAINER $NAMESPACE $CONFIG/$CONFIG_FILE --multi -b chrome --spa $script
+    control
+done
+
 for url in tests/$TEST/emulatedMobile/urls/*.txt ; do
     [ -e "$url" ] || continue
     POTENTIAL_CONFIG="./config/$(basename ${url%%.*}).json"
