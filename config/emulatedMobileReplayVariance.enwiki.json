@@ -1,6 +1,0 @@
-{
-  "extends": "./config/replayEmulatedMobile.json",
-  "browsertime": {
-    "connectivity": { "variance": 2 }
-  }
-}
