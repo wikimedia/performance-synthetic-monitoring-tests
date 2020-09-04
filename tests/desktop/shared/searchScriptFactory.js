@@ -1,5 +1,5 @@
 /**
- * T251544: A factory method that assists in comparing Vue search with legacy search.
+ * T251544: A factory method that assists in comparing Wvui search with legacy search.
  *
  * @param {string} searchName Name of search. Used as a label for the test.
  * @param {string} url Page to navigate to for the test
@@ -11,19 +11,27 @@
  */
 module.exports = function ( searchName, url, highlightClass ) {
 	return async function ( context, commands ) {
+		const webdriver = context.selenium.webdriver,
+			driver = context.selenium.driver,
+			inputSelector = '#p-search input[type="search"]';
+		var searchBox;
+
 		commands.meta.setTitle( `${searchName} search (anon)` );
 		commands.meta.setDescription( `Go to the Obama page and use ${searchName} search to find "Banana"` );
 
 		await commands.measure.start( `${searchName}Obama` );
 		await commands.navigate( url );
 
-		const webdriver = context.selenium.webdriver,
-			driver = context.selenium.driver,
-			searchBox = await driver.findElement( webdriver.By.id( 'searchInput' ) );
+		searchBox = await driver.findElement( webdriver.By.css( inputSelector ) );
 
 		// Start typing characters into search.
 		await searchBox.sendKeys( 'B' );
 		await commands.wait.byXpath( `//*[contains(@class, ${highlightClass}) and text() = 'B']`, 10000 );
+
+		// Redefine searchBox in case the original input has been removed from the
+		// DOM after lazy loading (which is the case with Wvui search because it is
+		// rendered client-side).
+		searchBox = await driver.findElement( webdriver.By.css( inputSelector ) );
 
 		await searchBox.sendKeys( 'ananab' );
 		await commands.wait.byXpath( `//*[contains(@class, ${highlightClass}) and text() = 'Bananab']`, 10000 );
