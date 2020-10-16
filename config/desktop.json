@@ -21,7 +21,8 @@
       "includeResponseBodies": "all",
       "disableBrowsertimeExtension": true,
       "mozillaProPreferences": true
-    }
+    },
+    "viewPort": "1920x1080"
   },
   "pageLoadStrategy": "none",
   "pageCompleteCheckStartWait": 5000,
