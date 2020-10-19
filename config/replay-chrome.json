@@ -14,6 +14,7 @@
     "timeToSettle": 5000,
     "delay": 5000,
     "cacheClearRaw": true,
+    "viewPort": "1920x1080",
     "chrome": {
       "collectConsoleLog": true,
       "includeResponseBodies": "all",
