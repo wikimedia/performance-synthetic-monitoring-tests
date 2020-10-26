@@ -18,7 +18,9 @@
       "includeResponseBodies": "all",
       "disableBrowsertimeExtension": true,
       "mozillaProPreferences": true,
-      "acceptInsecureCerts": true }
+      "acceptInsecureCerts": true,
+      "windowRecorder": true
+    }
   },
   "pageLoadStrategy": "none",
   "pageCompleteCheckStartWait": 5000,
