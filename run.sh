@@ -88,7 +88,7 @@ for url in tests/$TEST/webpagetest/desktop/urls/*.txt ; do
     for browser in "${BROWSERS[@]}"
       do
         NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-        docker run $DOCKER_SETUP $WPT_DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest-$browser.json --browsertime.video false $url
+        docker run $DOCKER_SETUP $WPT_DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest-$browser.json --browsertime.video false --plugins.add /webpagetest $url
         control
       done
 done
@@ -96,14 +96,14 @@ done
 for url in tests/$TEST/webpagetest/emulatedMobile/urls/*.txt ; do
     [ -e "$url" ] || continue
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${url%%.*})"
-    docker run $DOCKER_SETUP $WPT_DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetestEmulatedMobile.json --browsertime.video false $url
+    docker run $DOCKER_SETUP $WPT_DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetestEmulatedMobile.json --browsertime.video false --plugins.add /webpagetest $url
     control
 done
 
 for script in tests/$TEST/webpagetest/desktop/scripts/* ; do
     [ -e "$script" ] || continue
     NAMESPACE="--graphite.namespace sitespeed_io.$(basename ${script%%.*})"
-    docker run $DOCKER_SETUP $WPT_DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest.json --webpagetest.file $script --browsertime.video false https://www.example.org/
+    docker run $DOCKER_SETUP $WPT_DOCKER_CONTAINER $NAMESPACE $CONFIG/webpagetest.json --webpagetest.file $script --browsertime.video false --plugins.add /webpagetest https://www.example.org/
     control
 done
 docker volume prune -f
