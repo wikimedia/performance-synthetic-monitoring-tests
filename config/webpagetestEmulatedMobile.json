@@ -4,7 +4,6 @@
     "median": "SpeedIndex",
     "medianrun": "fastest",
     "timeline": true,
-    "bodies": true,
     "first": true,
     "runs": 5,
     "connectivity": "3GFast",

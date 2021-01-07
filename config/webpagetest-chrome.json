@@ -3,7 +3,6 @@
   "webpagetest": {
     "median": "SpeedIndex",
     "medianrun": "fastest",
-    "bodies": true,
     "first": true,
     "runs": 5,
     "connectivity": "Cable",
