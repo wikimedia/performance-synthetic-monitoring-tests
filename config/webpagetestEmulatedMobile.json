@@ -11,6 +11,7 @@
     "location": "us-east:Chrome",
     "emulateMobile": true,
     "timeout": 2400,
+    "bodies": true,
     "private": false
   },
   "plugins": {
