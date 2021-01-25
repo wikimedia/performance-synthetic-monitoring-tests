@@ -6,7 +6,7 @@
       "profile": "3g"
     },
     "visualElements": true,
-    "iterations": 7,
+    "iterations": 5,
     "browser": "chrome",
     "video": true,
     "visualMetric": true,
@@ -38,7 +38,7 @@
   "plugins": {
     "remove": ["thirdparty"]
   },
-  "slug": "firstView",
+  "slug": "webpagereplay",
   "graphite": {
     "namespace": "sitespeed_io.emulatedMobile",
     "annotationRetentionMinutes": 10,
