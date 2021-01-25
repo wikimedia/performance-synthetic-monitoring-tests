@@ -37,7 +37,7 @@ for file in tests/$TEST/*.wpr; do
         [[ -f "$POTENTIAL_CONFIG_FILE" ]] && CONFIG_FILE="$POTENTIAL_CONFIG_FILE" || CONFIG_FILE="config/$TEST/$TEST.json"
         [[ -f "$CONFIG_FILE" ]] && echo "Using config file $CONFIG_FILE" for $file || (echo "Missing config file $CONFIG_FILE for $file" && exit 1)
         docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=100 $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE -b $browser $url
-        #control
+        control
     done
 done
 for file in tests/$TEST/*.wpt ; do
