@@ -1,0 +1,48 @@
+{
+  "extends": "/config/secrets.json",
+  "browsertime": {
+    "connectivity": {
+      "engine": "throttle",
+      "profile": "3g"
+    },
+    "visualElements": true,
+    "iterations": 7,
+    "browser": "chrome",
+    "video": false,
+    "visualMetric": true,
+    "timeToSettle": 5000,
+    "delay": 5000,
+    "chrome": {
+      "CPUThrottlingRate": 5,
+      "collectConsoleLog": true,
+      "includeResponseBodies": "all",
+      "enableTraceScreenshots": true
+    }
+  },
+  "cpu": true,
+  "utc": true,
+  "pageLoadStrategy": "none",
+  "pageCompleteCheckStartWait": 4000,
+  "pageCompleteCheckPollTimeout": 1000,
+  "timeToSettle": 1000,
+  "gzipHAR": true,
+  "html": {
+    "fetchHARFiles": true,
+    "showScript": true,
+    "compareURL": "https://compare.sitespeed.io/"
+  },
+  "mobile": true,
+  "screenshot": {
+    "type": "jpg"
+  },
+  "plugins": {
+    "remove": ["thirdparty"]
+  },
+  "slug": "firstView",
+  "graphite": {
+    "namespace": "sitespeed_io.emulatedMobile",
+    "annotationRetentionMinutes": 10,
+    "skipSummary": true,
+    "addSlugToKey": true
+  }
+}
