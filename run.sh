@@ -54,7 +54,7 @@ for file in tests/$TEST/*.wpt ; do
         POTENTIAL_CONFIG_FILE="config/$TEST/$FILENAME_WITHOUT_EXTENSION.json"
         [[ -f "$POTENTIAL_CONFIG_FILE" ]] && CONFIG_FILE="$POTENTIAL_CONFIG_FILE" || CONFIG_FILE="config/$TEST/$TEST.json"
         [[ -f "$CONFIG_FILE" ]] && echo "Using config file $CONFIG_FILE" for $file || (echo "Missing config file $CONFIG_FILE for $file"  && exit 1)
-        docker run $DOCKER_SETUP $WPT_DOCKER_CONTAINER $NAMESPACE --config webpagetest-$browser.json --webpagetest.location us-east:$browser --browsertime.video false --plugins.add /webpagetest $url
+        docker run $DOCKER_SETUP $WPT_DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE --webpagetest.location us-east:$browser --browsertime.video false --plugins.add /webpagetest $url
         control
     done
 done
