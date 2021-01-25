@@ -9,7 +9,7 @@
     "visualElements": true,
     "iterations": 11,
     "browser": "chrome",
-    "video": false,
+    "video": true,
     "visualMetric": true,
     "timeToSettle": 5000,
     "delay": 5000,
