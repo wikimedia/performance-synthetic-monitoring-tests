@@ -1,10 +1,10 @@
 module.exports = async function ( context, commands ) {
 	commands.meta.setTitle( 'Test mobile as a logged in user' );
-	commands.meta.setDescription( 'Login the user with an empty browser cache, then visit Obama, Facebook and Sweden.' );
+	commands.meta.setDescription( 'Login the user with an empty browser cache, then visit Obama and Facebook' );
 
 	// We start by navigating to the login page.
-	await commands.navigate(
-		'https://en.m.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Main+Page'
+	await commands.measure.start(
+		'https://en.m.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Main+Page', 'LoginPage'
 	);
 
 	// When we fill in a input field/click on a link we wanna
@@ -38,13 +38,9 @@ module.exports = async function ( context, commands ) {
 		await commands.wait.byTime( 21000 );
 		await commands.js.run( 'document.body.innerHTML = ""; document.body.style.backgroundColor = "white";' );
 		// And then measure the Facebook page
-		await commands.measure.start(
+		return commands.measure.start(
 			'https://en.m.wikipedia.org/wiki/Facebook'
 		);
-		await commands.wait.byTime( 21000 );
-		await commands.js.run( 'document.body.innerHTML = ""; document.body.style.backgroundColor = "white";' );
-		// And then measure the Sweden page
-		return commands.measure.start( 'https://en.m.wikipedia.org/wiki/Sweden' );
 	} catch ( e ) {
 		context.log.error( e );
 		// We try/catch so we will catch if the the input fields can't be found
