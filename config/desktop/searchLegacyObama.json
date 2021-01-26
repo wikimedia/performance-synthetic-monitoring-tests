@@ -1,4 +1,5 @@
 {
   "extends": "./config/desktop/desktop.json",
-  "slug": "userJourneySearchLegacyObama"
+  "slug": "userJourneySearchLegacyObama",
+  "multi": true
 }

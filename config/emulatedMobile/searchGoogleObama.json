@@ -1,4 +1,5 @@
 {
   "extends": "./config/emulatedMobile/emulatedMobile.json",
-  "slug": "userJourneySearchGoogleObama"
+  "slug": "userJourneySearchGoogleObama",
+  "multi": true
 }

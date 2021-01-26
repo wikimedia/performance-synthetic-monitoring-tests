@@ -1,4 +1,5 @@
 {
   "extends": "./config/emulatedMobile/emulatedMobile.json",
-  "slug": "userJourneySecondViewFacebook"
+  "slug": "userJourneySecondViewFacebook",
+  "multi": true
 }
