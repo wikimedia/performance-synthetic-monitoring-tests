@@ -16,8 +16,19 @@ module.exports = function ( searchName, url, highlightClass ) {
 			inputSelector = '#p-search input[type="search"]';
 		var searchBox;
 
+		/**
+		 * Waits for an element with the class `highlightClass` that contains
+		 * `text`.
+		 *
+		 * @param {string} text
+		 * @return {Promise}
+		 */
+		function waitForResults( text ) {
+			return commands.wait.byXpath( `//*[contains(@class, '${highlightClass}') and text() = '${text}']`, 10000 );
+		}
+
 		commands.meta.setTitle( `${searchName} search (anon)` );
-		commands.meta.setDescription( `Go to the Obama page and use ${searchName} search to find "Banana"` );
+		commands.meta.setDescription( `Go to the Obama page and use ${searchName} search to find "Ab"` );
 
 		await commands.measure.start( `${searchName}Obama` );
 		await commands.navigate( url );
@@ -25,19 +36,19 @@ module.exports = function ( searchName, url, highlightClass ) {
 		searchBox = await driver.findElement( webdriver.By.css( inputSelector ) );
 
 		// Start typing characters into search.
-		await searchBox.sendKeys( 'B' );
-		await commands.wait.byXpath( `//*[contains(@class, ${highlightClass}) and text() = 'B']`, 10000 );
+		await searchBox.sendKeys( 'A' );
+		await waitForResults( 'A' );
 
 		// Redefine searchBox in case the original input has been removed from the
 		// DOM after lazy loading (which is the case with Wvui search because it is
 		// rendered client-side).
 		searchBox = await driver.findElement( webdriver.By.css( inputSelector ) );
 
-		await searchBox.sendKeys( 'ananab' );
-		await commands.wait.byXpath( `//*[contains(@class, ${highlightClass}) and text() = 'Bananab']`, 10000 );
+		await searchBox.sendKeys( 'bc' );
+		await waitForResults( 'Abc' );
 
 		await searchBox.sendKeys( webdriver.Key.BACK_SPACE );
-		await commands.wait.byXpath( `//*[contains(@class, ${highlightClass}) and text() = 'Banana']`, 10000 );
+		await waitForResults( 'Ab' );
 
 		// Stop measuring and collect metrics.
 		await commands.measure.stop();
