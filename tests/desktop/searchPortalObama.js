@@ -3,7 +3,7 @@ module.exports = async function ( context, commands ) {
 	commands.meta.setDescription(
 		' Go to the portal page and search for Barack Obama'
 	);
-	await commands.navigate( 'https://www.wikipedia.org' );
+	await commands.measure( 'https://www.wikipedia.org', 'portalSearchObamaStartPage' );
 	await commands.addText.byId( 'Barack Obama', 'searchInput' );
 
 	await commands.wait.byTime( 5000 );
