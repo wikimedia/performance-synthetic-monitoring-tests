@@ -36,7 +36,13 @@ for file in tests/$TEST/*.wpr; do
         POTENTIAL_CONFIG_FILE="config/$TEST/$FILENAME_WITHOUT_EXTENSION.json"
         [[ -f "$POTENTIAL_CONFIG_FILE" ]] && CONFIG_FILE="$POTENTIAL_CONFIG_FILE" || CONFIG_FILE="config/$TEST/$TEST.json"
         [[ -f "$CONFIG_FILE" ]] && echo "Using config file $CONFIG_FILE" for $file || (echo "Missing config file $CONFIG_FILE for $file" && exit 1)
-        docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=160 $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE -b $browser $file
+        # See https://phabricator.wikimedia.org/T282517
+        if [ "$browser" = "firefox" ]; then
+            LATENCY=100
+        else
+            LATENCY=160
+        fi
+        docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=$LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE -b $browser $file
         control
     done
 done
