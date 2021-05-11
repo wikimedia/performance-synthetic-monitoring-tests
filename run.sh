@@ -39,6 +39,8 @@ for file in tests/$TEST/*.wpr; do
         # See https://phabricator.wikimedia.org/T282517
         if [ "$browser" = "firefox" ]; then
             LATENCY=100
+        elif [[ $TEST == *"Mobile"* ]]; then
+            LATENCY=220
         else
             LATENCY=180
         fi
