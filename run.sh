@@ -40,7 +40,7 @@ for file in tests/$TEST/*.wpr; do
         if [ "$browser" = "firefox" ]; then
             LATENCY=100
         else
-            LATENCY=160
+            LATENCY=180
         fi
         docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=$LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE -b $browser $file
         control
