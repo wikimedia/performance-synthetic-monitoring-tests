@@ -17,6 +17,9 @@
       "enableTraceScreenshots": true,
       "includeResponseBodies": "all"
     },
+    "videoParams": {
+      "framerate": 10
+    },
     "firefox": {
       "includeResponseBodies": "all",
       "disableBrowsertimeExtension": true,
