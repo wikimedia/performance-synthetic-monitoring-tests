@@ -3,7 +3,7 @@
   "browsertime": {
     "connectivity": {
       "engine": "throttle",
-      "profile": "3g"
+      "profile": "4g"
     },
     "visualElements": true,
     "iterations": 3,
