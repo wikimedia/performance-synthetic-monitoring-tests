@@ -18,7 +18,7 @@
       "includeResponseBodies": "all"
     },
     "videoParams": {
-      "framerate": 60
+      "framerate": 30
     },
     "firefox": {
       "includeResponseBodies": "all",
