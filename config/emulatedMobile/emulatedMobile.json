@@ -13,7 +13,7 @@
     "timeToSettle": 5000,
     "delay": 5000,
     "chrome": {
-      "CPUThrottlingRate": 5,
+      "CPUThrottlingRate": 8,
       "collectConsoleLog": true,
       "includeResponseBodies": "all",
       "enableTraceScreenshots": true

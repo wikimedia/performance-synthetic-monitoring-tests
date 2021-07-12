@@ -15,7 +15,7 @@
     "delay": 5000,
     "cacheClearRaw": true,
     "chrome": {
-      "CPUThrottlingRate": 5,
+      "CPUThrottlingRate": 8,
       "collectConsoleLog": true,
       "includeResponseBodies": "all",
       "enableTraceScreenshots": true,
