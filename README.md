@@ -38,7 +38,7 @@ We use Yargs for configuration and all our configuration files extends the secre
 3. `nohup ./loop.sh sitespeedio &`
 4. `tail -f /tmp/sitespeed.io.log`
 
-If you want to run multiple test scenarios on one server, you can do that by feeding multiple test paths to the start script. In the test folder we have *replayDesktop* , *replayEmulatedMobile*, *sitespeedio* and *webpagetest*. To run both replay tests after each other, start the script like this: `nohup ./loop.sh replayDesktop replayEmulatedMobile &`
+If you want to run multiple test scenarios on one server, you can do that by feeding multiple test paths to the start script. In the test folder we have *desktopReplay* , *emulatedMobileReplay*, *sitespeedio* and *webpagetest*. To run both replay tests after each other, start the script like this: `nohup ./loop.sh desktopReplay emulatedMobileReplay &`
 
 ## Add new tests
 
@@ -48,7 +48,7 @@ Clone this repo:
 ```git clone ssh://USERNAME@gerrit.wikimedia.org:29418/performance/synthetic-monitoring-tests.git```
 
 ### Add a new URL to test
-If you want the URL to be tested with a replay proxy, add your test under *tests/replayDesktop* or *tests/replayEmulatedMobile*.
+If you want the URL to be tested with a replay proxy, add your test under *tests/desktopReplay* or *tests/emulatedMobileReplay*.
 
 If you want the URL to be tested with a replay proxy, add your test under *tests/webpagetest*. 
 
