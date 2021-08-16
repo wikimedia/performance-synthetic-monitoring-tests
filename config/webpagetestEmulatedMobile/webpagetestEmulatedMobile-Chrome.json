@@ -5,7 +5,7 @@
     "medianrun": "fastest",
     "timeline": true,
     "first": true,
-    "runs": 5,
+    "runs": 9,
     "connectivity": "3GFast",
     "host": "wpt.wmftest.org",
     "location": "us-east:Chrome",
