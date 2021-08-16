@@ -4,7 +4,7 @@
     "median": "SpeedIndex",
     "medianrun": "fastest",
     "first": true,
-    "runs": 5,
+    "runs": 9,
     "connectivity": "Cable",
     "host": "wpt.wmftest.org",
     "location": "us-east:Chrome",
