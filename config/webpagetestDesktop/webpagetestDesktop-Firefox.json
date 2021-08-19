@@ -1,10 +1,10 @@
 {
   "extends": "/config/secrets.json",
   "webpagetest": {
-    "median": "SpeedIndex",
+    "median": "render",
     "medianrun": "fastest",
     "first": true,
-    "runs": 9,
+    "runs": 11,
     "connectivity": "Cable",
     "host": "wpt.wmftest.org",
     "location": "us-east:Chrome",
