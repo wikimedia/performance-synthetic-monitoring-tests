@@ -2,7 +2,7 @@
   "extends": "/config/secrets.json",
   "webpagetest": {
     "median": "render",
-    "medianrun": "fastest",
+    "medianrun": "median",
     "first": true,
     "runs": 11,
     "connectivity": "Cable",
