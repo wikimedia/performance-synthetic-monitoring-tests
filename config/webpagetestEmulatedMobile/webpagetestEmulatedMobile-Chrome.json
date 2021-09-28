@@ -1,5 +1,6 @@
 {
   "extends": "/config/secrets.json",
+  "slug": "firstView",
   "webpagetest": {
     "median": "SpeedIndex",
     "medianrun": "fastest",
@@ -24,6 +25,7 @@
   },
    "graphite": {
     "namespace": "sitespeed_io.webpagetestEmulatedMobile",
-    "annotationRetentionMinutes": 10
+    "annotationRetentionMinutes": 10,
+    "addSlugToKey": true
   }
 }
