@@ -1,0 +1,7 @@
+{
+  "extends": "./config/desktop/desktop.json",
+  "browsertime": {
+    "block": ["https://en.wikipedia.org/w/load.php?lang=en&modules=startup&only=scripts&raw=1&skin=vector"]
+  },
+  "slug": "javaScriptFree"
+}

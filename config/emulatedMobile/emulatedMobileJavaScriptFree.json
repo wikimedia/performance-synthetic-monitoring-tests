@@ -1,0 +1,7 @@
+{
+  "extends": "./config/emulatedMobile/emulatedMobile.json",
+  "browsertime": {
+    "block": ["https://en.m.wikipedia.org/w/load.php?lang=en&modules=startup&only=scripts&raw=1&skin=minerva&target=mobile"]
+  },
+  "slug": "javaScriptFree"
+}
