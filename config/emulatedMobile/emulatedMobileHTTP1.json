@@ -1,0 +1,9 @@
+{
+  "extends": "./config/emulatedMobile/emulatedMobile.json",
+  "browsertime": {
+    "chrome": {
+      "args": ["disable-http2"]
+    }
+  },
+  "slug": "http1"
+}
