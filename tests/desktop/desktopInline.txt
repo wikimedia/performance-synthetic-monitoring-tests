@@ -1,2 +1,2 @@
-https://en.wikipedia.org/speed-tests/Oceanic.enwiki.1046871765/index.html coldView
+https://en.wikipedia.org/wiki/Oceanic_Airlines coldView
 https://en.wikipedia.org/speed-tests/Oceanic.enwiki.1046871765/inline_styles.html coldViewInline
