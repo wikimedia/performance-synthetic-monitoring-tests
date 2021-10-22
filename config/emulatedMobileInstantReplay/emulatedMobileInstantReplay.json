@@ -46,7 +46,7 @@
   "slug": "webpagereplay",
   "graphite": {
     "namespace": "sitespeed_io.emulatedMobile",
-    "annotationRetentionMinutes": 10,
+    "annotationRetentionMinutes": 60,
     "skipSummary": true,
     "addSlugToKey": true
   }

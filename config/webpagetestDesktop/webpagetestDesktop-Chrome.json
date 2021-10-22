@@ -24,7 +24,7 @@
   },
     "graphite": {
     "namespace": "sitespeed_io.webpagetest",
-    "annotationRetentionMinutes": 10,
+    "annotationRetentionMinutes": 60,
     "addSlugToKey": true
   }
 }
