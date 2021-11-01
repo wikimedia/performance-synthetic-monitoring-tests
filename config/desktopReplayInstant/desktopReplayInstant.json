@@ -26,6 +26,9 @@
     }, 
     "firefox": {
         "acceptInsecureCerts": true
+    },
+    "videoParams": {
+      "filmstripFullSize": true
     }
   },
   "pageLoadStrategy": "none",
