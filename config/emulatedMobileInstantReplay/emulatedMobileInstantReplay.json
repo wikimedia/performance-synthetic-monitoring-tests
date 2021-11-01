@@ -23,6 +23,9 @@
         "--ignore-certificate-errors-spki-list=PhrPvGIaAMmd29hj8BCZOq096yj7uMpRNHpn5PDxI6I=",
         "--user-data-dir=/tmp/google-chrome-wpr"
       ]
+    },
+    "videoParams": {
+      "filmstripFullSize": true
     }
   },
   "pageLoadStrategy": "none",
