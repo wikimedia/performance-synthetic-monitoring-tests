@@ -15,7 +15,10 @@
     "chrome": {
       "collectConsoleLog": true,
       "enableTraceScreenshots": true,
-      "includeResponseBodies": "all"
+      "includeResponseBodies": "all",
+      "args": [
+        "--disable-features=PaintHoldingCrossOrigin"
+      ]
     },
     "videoParams": {
       "framerate": 30
