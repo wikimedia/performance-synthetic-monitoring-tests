@@ -16,7 +16,8 @@
       "CPUThrottlingRate": 7,
       "collectConsoleLog": true,
       "includeResponseBodies": "all",
-      "enableTraceScreenshots": true
+      "enableTraceScreenshots": true,
+      "args": [ "--disable-features=PaintHoldingCrossOrigin"]
     }
   },
   "cpu": true,
