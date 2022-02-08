@@ -13,7 +13,8 @@
     "emulateMobile": true,
     "timeout": 2400,
     "bodies": true,
-    "private": false
+    "private": false,
+    "cmdline": "--disable-features=PaintHoldingCrossOrigin"
   },
   "plugins": {
     "remove": "browsertime"
