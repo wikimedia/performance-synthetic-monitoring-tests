@@ -12,7 +12,7 @@
     "location": "us-east:Chrome",
     "emulateMobile": true,
     "timeout": 2400,
-    "bodies": true,
+    "bodies": false,
     "private": false,
     "cmdline": "--disable-features=PaintHoldingCrossOrigin"
   },
