@@ -11,7 +11,7 @@
     "timeline": true,
     "location": "us-east:Chrome",
     "timeout": 2400,
-    "bodies": false,
+    "bodies": true,
     "private": false,
     "cmdline": "--disable-features=PaintHoldingCrossOrigin"
   },
