@@ -10,7 +10,7 @@
     "host": "wpt.wmftest.org",
     "location": "us-east:Chrome",
     "timeout": 2400,
-    "bodies": true,
+    "bodies": false,
     "private": false
   },
   "plugins": {
