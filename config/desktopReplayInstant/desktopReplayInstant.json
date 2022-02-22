@@ -29,7 +29,7 @@
         "acceptInsecureCerts": true
     },
     "videoParams": {
-      "filmstripFullSize": true
+      "filmstripFullSize": false
     }
   },
   "pageLoadStrategy": "none",
