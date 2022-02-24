@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION=23.0.1
+VERSION=23.1.0
 DOCKER_CONTAINER=sitespeedio/sitespeed.io:$VERSION
 WPT_DOCKER_CONTAINER=sitespeedio/sitespeed.io:$VERSION-webpagetest
 DOCKER_SETUP="--cap-add=NET_ADMIN  --shm-size=2g --rm -v /config:/config -v "$(pwd)":/sitespeed.io -v /etc/localtime:/etc/localtime:ro -e MAX_OLD_SPACE_SIZE=3072 --name sitespeedio"
