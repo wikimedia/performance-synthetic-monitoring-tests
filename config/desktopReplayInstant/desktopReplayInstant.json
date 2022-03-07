@@ -16,6 +16,7 @@
     "cacheClearRaw": true,
     "viewPort": "1920x1080",
     "chrome": {
+      "cleanUserDataDir": true,
       "collectConsoleLog": true,
       "includeResponseBodies": "all",
       "enableTraceScreenshots": true,

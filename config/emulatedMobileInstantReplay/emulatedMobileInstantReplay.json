@@ -15,6 +15,7 @@
     "delay": 5000,
     "cacheClearRaw": true,
     "chrome": {
+      "cleanUserDataDir": true,
       "CPUThrottlingRate": 7,
       "collectConsoleLog": true,
       "includeResponseBodies": "all",
