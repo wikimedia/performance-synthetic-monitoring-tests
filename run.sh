@@ -32,7 +32,7 @@ for file in tests/$TEST/*.wpr; do
     if [[ $TEST == *"Mobile"* ]]; then
         BROWSERS=(chrome)
     else
-        BROWSERS=(chrome firefox)
+        BROWSERS=(chrome)
     fi
     for browser in "${BROWSERS[@]}"
     do
@@ -42,9 +42,7 @@ for file in tests/$TEST/*.wpr; do
         [[ -f "$POTENTIAL_CONFIG_FILE" ]] && CONFIG_FILE="$POTENTIAL_CONFIG_FILE" || CONFIG_FILE="config/$TEST/$TEST.json"
         [[ -f "$CONFIG_FILE" ]] && echo "Using config file $CONFIG_FILE" for $file || (echo "Missing config file $CONFIG_FILE for $file" && exit 1)
         # See https://phabricator.wikimedia.org/T282517
-        if [ "$browser" = "firefox" ]; then
-            LATENCY=100
-        elif [[ $TEST == *"Mobile"* ]]; then
+        if [[ $TEST == *"Mobile"* ]]; then
             LATENCY=220
         else
             LATENCY=180
