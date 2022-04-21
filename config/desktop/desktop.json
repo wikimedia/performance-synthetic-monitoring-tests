@@ -1,6 +1,10 @@
 {
   "extends": "/config/secrets.json",
   "browsertime": {
+    "timeouts": {
+      "pageLoad": 60000,
+      "pageCompleteCheck": 60000
+    },
     "connectivity": {
       "engine": "throttle",
       "profile": "cable"
