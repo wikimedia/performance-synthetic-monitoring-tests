@@ -1,5 +1,5 @@
 {
   "extends": "./config/emulatedMobile/emulatedMobile.json",
-  "slug": "userJourneySecondViewSweden",
+  "slug": "warmCache",
   "multi": true
 }

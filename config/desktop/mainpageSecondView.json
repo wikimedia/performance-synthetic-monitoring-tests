@@ -1,5 +1,5 @@
 {
   "extends": "./config/desktop/desktop.json",
-  "slug": "userJourneySecondViewMainPage",
+  "slug": "warmCache",
   "multi": true
 }

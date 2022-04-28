@@ -1,5 +1,5 @@
 {
   "extends": "./config/emulatedMobile/emulatedMobile.json",
-  "slug": "userJourneySecondViewFacebook",
+  "slug": "warmCache",
   "multi": true
 }
