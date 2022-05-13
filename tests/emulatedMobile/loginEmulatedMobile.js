@@ -43,7 +43,7 @@ module.exports = async function ( context, commands ) {
 		);
 	} catch ( e ) {
 		context.log.error( e );
-		// We try/catch so we will catch if the the input fields can't be found
+		// We try/catch so we will catch if the input fields can't be found
 		// The error is automatically logged in Browsertime and re-thrown here
 	}
 };
