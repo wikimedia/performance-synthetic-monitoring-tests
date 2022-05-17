@@ -32,7 +32,7 @@ for file in tests/$TEST/*.wpr; do
     if [[ $TEST == *"Mobile"* ]]; then
         BROWSERS=(chrome)
     else
-        BROWSERS=(chrome)
+        BROWSERS=(chrome firefox)
     fi
     for browser in "${BROWSERS[@]}"
     do
