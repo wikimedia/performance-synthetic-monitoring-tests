@@ -30,7 +30,8 @@
         "acceptInsecureCerts": true
     },
     "videoParams": {
-      "filmstripFullSize": false
+      "filmstripFullSize": false,
+      "thumbsize": 800
     }
   },
   "pageLoadStrategy": "none",

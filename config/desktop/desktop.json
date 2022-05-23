@@ -25,7 +25,8 @@
       ]
     },
     "videoParams": {
-      "framerate": 30
+      "framerate": 30,
+      "thumbsize": 800
     },
     "firefox": {
       "includeResponseBodies": "all",

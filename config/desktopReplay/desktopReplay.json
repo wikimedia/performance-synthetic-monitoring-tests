@@ -15,6 +15,9 @@
     "delay": 5000,
     "cacheClearRaw": true,
     "viewPort": "1920x1080",
+    "videoParams": {
+      "thumbsize": 800
+    },
     "chrome": {
       "cleanUserDataDir": true,
       "collectConsoleLog": true,

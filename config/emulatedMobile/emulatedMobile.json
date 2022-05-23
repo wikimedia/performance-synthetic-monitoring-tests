@@ -16,6 +16,9 @@
     "visualMetric": true,
     "timeToSettle": 5000,
     "delay": 5000,
+    "videoParams": {
+      "thumbsize": 600
+    },
     "chrome": {
       "CPUThrottlingRate": 7,
       "collectConsoleLog": true,

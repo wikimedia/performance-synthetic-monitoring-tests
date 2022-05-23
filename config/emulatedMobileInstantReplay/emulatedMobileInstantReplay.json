@@ -27,7 +27,8 @@
       ]
     },
     "videoParams": {
-      "filmstripFullSize": false
+      "filmstripFullSize": false,
+      "thumbsize": 600
     }
   },
   "pageLoadStrategy": "none",
