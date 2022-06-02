@@ -24,7 +24,8 @@
       "collectConsoleLog": true,
       "includeResponseBodies": "all",
       "enableTraceScreenshots": true,
-      "args": [ "--disable-features=PaintHoldingCrossOrigin"]
+      "args": [ "--disable-features=PaintHoldingCrossOrigin"],
+      "traceCategory": ["disabled-by-default-v8.cpu_profiler"]
     }
   },
   "cpu": true,
