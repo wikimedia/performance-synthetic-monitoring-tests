@@ -20,8 +20,7 @@
       "collectConsoleLog": true,
       "includeResponseBodies": "all",
       "enableTraceScreenshots": true,
-      "args": ["--ignore-certificate-errors-spki-list=PhrPvGIaAMmd29hj8BCZOq096yj7uMpRNHpn5PDxI6I=","--user-data-dir=/tmp/google-chrome-wpr",  "--disable-features=PaintHoldingCrossOrigin"],
-      "traceCategory": ["disabled-by-default-v8.cpu_profiler"]
+      "args": ["--ignore-certificate-errors-spki-list=PhrPvGIaAMmd29hj8BCZOq096yj7uMpRNHpn5PDxI6I=","--user-data-dir=/tmp/google-chrome-wpr",  "--disable-features=PaintHoldingCrossOrigin"]
     },
     "videoParams": {
       "filmstripFullSize": false
