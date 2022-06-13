@@ -20,9 +20,6 @@
       "collectConsoleLog": true,
       "enableTraceScreenshots": true,
       "includeResponseBodies": "all",
-      "args": [
-        "--disable-features=PaintHoldingCrossOrigin"
-      ],
       "traceCategory": ["disabled-by-default-v8.cpu_profiler"]
     },
     "videoParams": {
