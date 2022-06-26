@@ -7,7 +7,7 @@
       "alias": "100"
     },
     "visualElements": true,
-    "iterations": 5,
+    "iterations": 3,
     "browser": "chrome",
     "video": true,
     "visualMetric": true,
