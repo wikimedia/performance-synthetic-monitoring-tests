@@ -1,5 +1,5 @@
 {
   "extends": "./config/desktop/desktop.json",
-  "slug": "userJourneySearchWvuiObama",
+  "slug": "userJourneySearchCodexObama",
   "multi": true
 }
