@@ -55,5 +55,6 @@
     "annotationRetentionMinutes": 60,
     "skipSummary": true,
     "addSlugToKey": true
-  }
+  },
+  "copyLatestFilesToBaseGraphiteNamespace": true
 }
