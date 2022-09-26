@@ -50,7 +50,8 @@
     "namespace": "sitespeed_io.emulatedMobile",
     "annotationRetentionMinutes": 60,
     "skipSummary": true,
-    "addSlugToKey": true
+    "addSlugToKey": true,
+    "messages": ["pageSummary", "run"]
   },
   "copyLatestFilesToBaseGraphiteNamespace": true
 }

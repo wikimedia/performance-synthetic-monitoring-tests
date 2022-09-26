@@ -58,7 +58,8 @@
     "namespace": "sitespeed_io.desktop",
     "annotationRetentionMinutes": 60,
     "skipSummary": true,
-    "addSlugToKey": true
+    "addSlugToKey": true,
+    "messages": ["pageSummary", "run"]
   },
   "copyLatestFilesToBaseGraphiteNamespace": true
 }
