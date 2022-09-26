@@ -39,7 +39,6 @@
   "pageLoadStrategy": "none",
   "pageCompleteCheckStartWait": 5000,
   "pageCompleteCheckPollTimeout": 1000,
-  "timeToSettle": 1000,
   "cpu": true,
   "utc": true,
   "gzipHAR": true,

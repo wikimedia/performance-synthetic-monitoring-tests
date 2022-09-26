@@ -32,7 +32,6 @@
   "pageLoadStrategy": "none",
   "pageCompleteCheckStartWait": 4000,
   "pageCompleteCheckPollTimeout": 1000,
-  "timeToSettle": 1000,
   "gzipHAR": true,
   "html": {
     "fetchHARFiles": true,
