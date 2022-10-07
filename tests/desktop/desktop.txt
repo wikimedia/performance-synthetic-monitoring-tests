@@ -15,3 +15,6 @@ https://ca.wikipedia.org/wiki/Estocolm
 https://ca.wikipedia.org/wiki/Mitologia_grega
 https://ca.wikipedia.org/wiki/Cultura
 https://test2.wikipedia.org/wiki/Main_Page
+https://www.wikidata.org/wiki/Wikidata:Main_Page
+https://www.wikidata.org/wiki/Q64
+https://wikidata.beta.wmflabs.org/wiki/Q15905
