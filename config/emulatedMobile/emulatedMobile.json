@@ -17,6 +17,7 @@
     "timeToSettle": 5000,
     "delay": 5000,
     "videoParams": {
+      "framerate": 10,
       "thumbsize": 600
     },
     "chrome": {

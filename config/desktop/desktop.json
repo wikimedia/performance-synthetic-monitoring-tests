@@ -26,7 +26,7 @@
       "traceCategory": ["disabled-by-default-v8.cpu_profiler"]
     },
     "videoParams": {
-      "framerate": 30,
+      "framerate": 10,
       "thumbsize": 800
     },
     "firefox": {
