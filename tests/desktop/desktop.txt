@@ -18,3 +18,4 @@ https://test2.wikipedia.org/wiki/Main_Page
 https://www.wikidata.org/wiki/Wikidata:Main_Page
 https://www.wikidata.org/wiki/Q64
 https://wikidata.beta.wmflabs.org/wiki/Q15905
+https://ja.wikipedia.org/wiki/%E9%BB%84%E7%A0%82
