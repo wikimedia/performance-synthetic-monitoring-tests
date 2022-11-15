@@ -1,6 +1,6 @@
 # Configuration files for synthetic monitoring tests
 
-This repo contains configuration files for running Browsertime/sitespeed.io/WebPageReplay and WebPageTest.
+This repo contains configuration files for running Browsertime/sitespeed.io/WebPageReplay on desktop.
 
 ## What is synthetic monitoring?
 
@@ -13,7 +13,6 @@ As a start we run the followning tests:
 * One server running Firefox and Chrome tests using WebPageReplay as a replay server for desktop
 * One server running Chrome tests using WebPageReplay as a replay server for emulated mobile
 * One server running Firefox and Chrome testing Alexa top 10 and use cases (as a logged in user, multiple steps etc)
-* The WebPageTest server triggering the WebPageTest tests (Chrome and Firefox testing a couple of URLs).
 
 The repo setup:
 * `/config/` - configuration files for different tests
@@ -50,11 +49,11 @@ Clone this repo:
 ### Add a new URL to test
 If you want the URL to be tested with a replay proxy, add your test under *tests/desktopReplay* or *tests/emulatedMobileReplay*.
 
-If you want the URL to be tested with a replay proxy, add your test under *tests/webpagetest*. 
+If you want the URL to be tested without a replay proxy, add your test under *tests/desktop*. 
 
 ### Add a new user scenario to test
 
-If you want the URL to be tested, add your test under *tests/sitespeedio/\*/scripts*. 
+If you want the user journey to be tested, add your test under *tests/sitespeedio/\*/scripts*. 
 
 ## Where do I find the data/metrics?
 To be added when we can see the data in our Grafana instance.
