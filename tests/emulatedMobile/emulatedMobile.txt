@@ -14,3 +14,4 @@ https://m.mediawiki.org/wiki/How_to_contribute
 https://ca.m.wikipedia.org/wiki/Estocolm
 https://ca.m.wikipedia.org/wiki/Mitologia_grega
 https://ca.m.wikipedia.org/wiki/Cultura
+https://www.wikipedia.org
