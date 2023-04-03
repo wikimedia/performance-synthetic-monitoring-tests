@@ -5,6 +5,6 @@ module.exports = async function ( context, commands ) {
 	await commands.addText.byId( 'Barack Obama', 'searchInput' );
 	await commands.js.run( 'for (let node of document.body.childNodes) { if (node.style) node.style.display = "none";}' );
 	await commands.measure.start( 'headerSearchObama' );
-	await commands.click.byIdAndWait( 'searchButton' );
+	await commands.click.byClassNameAndWait( 'cdx-search-input__end-button' );
 	return commands.measure.stop();
 };
