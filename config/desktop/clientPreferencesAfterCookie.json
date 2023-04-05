@@ -1,0 +1,5 @@
+{
+    "extends": "./config/desktop/default.json",
+    "slug": "userJourneyClientPreferencesAfterCookie",
+    "multi": true
+}
