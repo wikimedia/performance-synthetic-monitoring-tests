@@ -11,8 +11,6 @@
     "browser": "chrome",
     "video": true,
     "visualMetric": true,
-    "timeToSettle": 5000,
-    "delay": 5000,
     "cacheClearRaw": true,
     "viewPort": "1920x1080",
     "chrome": {
@@ -34,9 +32,6 @@
       "thumbsize": 800
     }
   },
-  "pageLoadStrategy": "none",
-  "pageCompleteCheckStartWait": 5000,
-  "pageCompleteCheckPollTimeout": 1000,
   "cpu": true,
   "utc": true,
   "gzipHAR": true,

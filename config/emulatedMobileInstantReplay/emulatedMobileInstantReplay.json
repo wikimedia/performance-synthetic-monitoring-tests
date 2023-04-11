@@ -7,12 +7,10 @@
       "alias": "100"
     },
     "visualElements": true,
-    "iterations": 5,
+    "iterations": 3,
     "browser": "chrome",
     "video": true,
     "visualMetric": true,
-    "timeToSettle": 5000,
-    "delay": 5000,
     "cacheClearRaw": true,
     "chrome": {
       "cleanUserDataDir": true,
@@ -29,10 +27,6 @@
       "thumbsize": 600
     }
   },
-  "pageLoadStrategy": "none",
-  "pageCompleteCheckStartWait": 4000,
-  "pageCompleteCheckPollTimeout": 1000,
-  "cpu": true,
   "utc": true,
   "mobile": true,
   "gzipHAR": true,

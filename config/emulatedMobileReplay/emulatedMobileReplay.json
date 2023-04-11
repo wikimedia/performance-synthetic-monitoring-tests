@@ -11,12 +11,9 @@
     "browser": "chrome",
     "video": true,
     "visualMetric": true,
-    "timeToSettle": 5000,
-    "delay": 5000,
     "cacheClearRaw": true,
     "chrome": {
       "cleanUserDataDir": true,
-      "CPUThrottlingRate": 7,
       "collectConsoleLog": true,
       "includeResponseBodies": "all",
       "enableTraceScreenshots": true,
@@ -26,9 +23,6 @@
       "filmstripFullSize": false
     }
   },
-  "pageLoadStrategy": "none",
-  "pageCompleteCheckStartWait": 4000,
-  "pageCompleteCheckPollTimeout": 1000,
   "cpu": true,
   "utc": true,
   "mobile": true,
