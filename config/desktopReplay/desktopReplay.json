@@ -28,7 +28,8 @@
       ]
     },
     "firefox": {
-      "acceptInsecureCerts": true
+      "acceptInsecureCerts": true,
+      "bidihar": true
     }
   },
   "cpu": true,

@@ -25,7 +25,8 @@
       ]
     }, 
     "firefox": {
-        "acceptInsecureCerts": true
+        "acceptInsecureCerts": true,
+        "bidihar": true
     },
     "videoParams": {
       "filmstripFullSize": false,
