@@ -15,6 +15,7 @@
     "chrome": {
       "cleanUserDataDir": true,
       "collectConsoleLog": true,
+      "CPUThrottlingRate": 2,
       "includeResponseBodies": "all",
       "enableTraceScreenshots": true,
       "args": [
@@ -27,6 +28,7 @@
       "thumbsize": 600
     }
   },
+  "cpu": true,
   "utc": true,
   "mobile": true,
   "gzipHAR": true,
