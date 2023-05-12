@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION=27.3.0
+VERSION=27.6.2
 DOCKER_CONTAINER=sitespeedio/sitespeed.io:$VERSION
 DOCKER_SETUP="--cap-add=NET_ADMIN  --shm-size=2g --rm -v /config:/config -v "$(pwd)":/sitespeed.io -v /etc/localtime:/etc/localtime:ro -e MAX_OLD_SPACE_SIZE=3072 --name sitespeedio"
 
@@ -46,7 +46,9 @@ for file in tests/$TEST/*.wpr; do
         else
             LATENCY=180
         fi
-        docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=$LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE -b $browser $file
+         docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=$LATENCY $DOCKER_CONTAINER $NAMESPACE --config config/ -b $browser $file
+
+        docker run --cap-add=NET_ADMIN  --shm-size=2g --rm -v /config:/config -v "$(pwd)":/sitespeed.io -v /etc/localtime:/etc/localtime:ro -e MAX_OLD_SPACE_SIZE=3072 --name sitespeedio -e REPLAY=true -e LATENCY=180 sitespeedio/sitespeed.io:27.3.0 --config $CONFIG_FILE -b firefox https://en.wikipedia.org/wiki/Barack_Obama  --browsertime.skipHar true
         control
     done
 done
