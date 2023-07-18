@@ -1,0 +1,5 @@
+{
+    "extends": "./config/desktop/desktop.json",
+    "slug": "userJourneyLocalStorageClientPreferencesBefore",
+    "multi": true
+}
