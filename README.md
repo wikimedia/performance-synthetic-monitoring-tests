@@ -55,6 +55,13 @@ If you want the URL to be tested without a replay proxy, add your test under *te
 
 If you want the user journey to be tested, add your test under *tests/sitespeedio/\*/scripts*. 
 
+### How do I test my change before I submit?
+The easiest way is to install sitespeed.io globally on your machine and then run the test. If you have a user scenario that exists in *tests/desktop/myTest.cjs* you can run your test like:
+`sitespeed.io tests/desktop/myTest.cjs --multi` without adding the configuration file, that way the data will not be sent to Graphite. 
+
+If you have some specific configuration for your test, then make sure you add that locally too, so you can test your script.
+
+
 ## Where do I find the data/metrics?
-To be added when we can see the data in our Grafana instance.
+You can see the data in [our Grafana instance](https://grafana.wikimedia.org/d/IvAfnmLMk/page-drilldown) after the test has run the first time.
 
