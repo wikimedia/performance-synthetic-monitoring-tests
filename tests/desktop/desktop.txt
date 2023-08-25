@@ -20,3 +20,4 @@ https://www.wikidata.org/wiki/Q64
 https://wikidata.beta.wmflabs.org/wiki/Q15905
 https://ja.wikipedia.org/wiki/%E9%BB%84%E7%A0%82
 https://www.wikipedia.org
+https://en.wikipedia.org/speed-tests/Banksy.enwiki.872156204/ Banksy
