@@ -4,7 +4,7 @@ module.exports = async function ( context, commands ) {
 	await commands.navigate( 'https://en.m.wikipedia.org/wiki/Main_Page' );
 	await commands.click.byId( 'searchIcon' );
 	await commands.wait.byTime( 2000 );
-	await commands.addText.byXpath( 'Barack Obama', '/html/body/div[3]/div/div[1]/div/div[1]/form/input' );
+	await commands.addText.byXpath( 'Barack Obama', '/html/body/div[4]/div/div[1]/div/div[1]/form/input[1]' );
 	await commands.wait.byTime( 2000 );
 	await commands.js.run( 'for (let node of document.body.childNodes) { if (node.style) node.style.display = "none";}' );
 	await commands.measure.start( 'searchPageObama' );
