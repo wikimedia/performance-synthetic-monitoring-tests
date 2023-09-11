@@ -1,0 +1,5 @@
+{
+  "extends": "./config/desktopFirstView/desktop.json",
+  "slug": "warmCache",
+  "multi": true
+}

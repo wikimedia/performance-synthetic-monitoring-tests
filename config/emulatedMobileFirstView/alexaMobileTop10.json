@@ -1,0 +1,13 @@
+{
+  "extends": "./config/emulatedMobileFirstView/emulatedMobile.json",
+  "browsertime": {
+    "iterations": 1
+  },
+  "sustainable": {
+    "enable": true
+  },
+  "axe": {
+    "enable": true
+  },
+   "slug": "firstViewAlexa"
+}

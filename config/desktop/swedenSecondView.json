@@ -1,5 +1,0 @@
-{
-  "extends": "./config/desktop/desktop.json",
-  "slug": "warmCache",
-  "multi": true
-}

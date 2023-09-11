@@ -1,5 +1,0 @@
-{
-  "extends": "./config/emulatedMobile/emulatedMobile.json",
-  "slug": "userJourneyLogin",
-  "multi": true
-}

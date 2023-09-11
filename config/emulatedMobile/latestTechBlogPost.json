@@ -1,4 +1,0 @@
-{
-  "extends": "./config/emulatedMobile/emulatedMobile.json",
-  "slug": "latestTechBlogPost"
-}
