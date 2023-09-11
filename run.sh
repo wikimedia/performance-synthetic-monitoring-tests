@@ -16,11 +16,9 @@ for file in tests/$TEST/*.{txt,cjs} ; do
         POTENTIAL_CONFIG_FILE="config/$TEST/$FILENAME_WITHOUT_EXTENSION.json"
         [[ -f "$POTENTIAL_CONFIG_FILE" ]] && CONFIG_FILE="$POTENTIAL_CONFIG_FILE" || CONFIG_FILE="config/$TEST/$TEST.json"
         [[ -f "$CONFIG_FILE" ]] && echo "Using config file $CONFIG_FILE" for $file || (echo "Missing config file $CONFIG_FILE for $file" && exit 1)
-         if [ "$browser" = "firefox" ]; then
-            EXTRAS="--browsertime.videoParams.framerate 10"
-        else
-            EXTRAS=""
-        fi
+        # On the new Hetzner cloud instances we use the same framrate for the video
+        # for both Chrome/Firefox and emulated mobile
+        EXTRAS="--browsertime.videoParams.framerate 10"
         docker run $DOCKER_SETUP $DOCKER_CONTAINER --config $CONFIG_FILE -b $browser $EXTRAS $file 
         control
     done
