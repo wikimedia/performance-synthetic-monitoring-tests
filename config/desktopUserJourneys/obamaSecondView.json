@@ -1,5 +1,11 @@
 {
   "extends": "./config/desktopFirstView/desktop.json",
   "slug": "warmCache",
-  "multi": true
+  "multi": true,
+  "browsertime": {
+  "timeToSettle": 10000,
+  "delay": 10000
+  },
+  "pageCompleteCheckStartWait": 5000,
+  "pageCompleteCheckPollTimeout": 1000
 }
