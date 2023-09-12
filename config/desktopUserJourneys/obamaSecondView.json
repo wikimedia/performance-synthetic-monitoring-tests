@@ -3,9 +3,9 @@
   "slug": "warmCache",
   "multi": true,
   "browsertime": {
-  "timeToSettle": 10000,
-  "delay": 10000
-  },
-  "pageCompleteCheckStartWait": 5000,
-  "pageCompleteCheckPollTimeout": 1000
+    "connectivity": {
+      "engine": "throttle",
+      "profile": "4g"
+    }
+  }
 }
