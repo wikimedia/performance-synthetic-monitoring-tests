@@ -1,5 +1,11 @@
 {
   "extends": "./config/desktopFirstView/desktop.json",
   "slug": "warmCache",
-  "multi": true
+  "multi": true,
+  "browsertime": {
+    "connectivity": {
+      "engine": "throttle",
+      "profile": "4g"
+    }
+  }
 }
