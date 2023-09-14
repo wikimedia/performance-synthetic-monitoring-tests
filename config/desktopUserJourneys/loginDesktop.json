@@ -3,6 +3,10 @@
   "slug": "userJourneyLogin",
   "multi": true,
   "browsertime": {
-    "iterations": 1
+    "iterations": 1,
+    "connectivity": {
+      "engine": "throttle",
+      "profile": "4g"
+    }
   }
 }
