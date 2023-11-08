@@ -1,8 +1,5 @@
 {
   "extends": "./config/desktopFirstView/desktop.json",
   "slug": "experiments",
-  "multi": true,
-  "chrome": {
-    "CPUThrottlingRate": 5
-  }
+  "multi": true
 }
