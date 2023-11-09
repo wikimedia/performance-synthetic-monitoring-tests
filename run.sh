@@ -24,7 +24,7 @@ for file in tests/$TEST/*.{txt,cjs} ; do
     done
 done
 
-if if [[ "$TEST" == *"Replay"* ]]; then
+if [[ "$TEST" == *"Replay"* ]]; then
     for file in tests/$TEST/*.{wpr,cjs}; do
         [ -e "$file" ] || continue
         if [[ $TEST == *"Mobile"* ]]; then
@@ -50,6 +50,5 @@ if if [[ "$TEST" == *"Replay"* ]]; then
         done
     done
 fi
-
 docker volume prune -f
 sleep 20
