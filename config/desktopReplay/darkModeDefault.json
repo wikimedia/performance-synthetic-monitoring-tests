@@ -1,5 +1,0 @@
-{
-  "extends": "./config/desktopReplay/desktopReplay.json",
-  "slug": "experiments",
-  "multi": true
-}
