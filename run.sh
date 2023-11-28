@@ -46,8 +46,11 @@ if [[ "$TEST" == *"Replay"* ]]; then
             else
                 LATENCY=180
             fi
-                docker run $DOCKER_SETUP_WPR -e REPLAY=true -e LATENCY=$LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE -b $browser $file
+            while IFS= read -r url || [ -n "$url" ]
+            do
+                docker run $DOCKER_SETUP_WPR -e REPLAY=true -e LATENCY=$LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE -b $browser $url
                 control
+            done < "$file"
         done
     done
 fi
