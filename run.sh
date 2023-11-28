@@ -1,7 +1,8 @@
 #!/bin/bash
-VERSION=30.3.0
+VERSION=30.5.0
 DOCKER_CONTAINER=sitespeedio/sitespeed.io:$VERSION
 DOCKER_SETUP="--cap-add=NET_ADMIN  --shm-size=2g --rm -v /config:/config -v "$(pwd)":/sitespeed.io -v /etc/localtime:/etc/localtime:ro -e MAX_OLD_SPACE_SIZE=3072 --name sitespeedio"
+DOCKER_SETUP_WPR="--cap-add=NET_ADMIN  --shm-size=2g --rm -v /config:/config -v /baseline/:/baseline -v "$(pwd)":/sitespeed.io -v /etc/localtime:/etc/localtime:ro -e MAX_OLD_SPACE_SIZE=3072 --name sitespeedio"
 
 for file in tests/$TEST/*.{txt,cjs} ; do
     [ -e "$file" ] || continue
@@ -30,7 +31,7 @@ if [[ "$TEST" == *"Replay"* ]]; then
         if [[ $TEST == *"Mobile"* ]]; then
             BROWSERS=(chrome)
         else
-            BROWSERS=(chrome firefox)
+            BROWSERS=(chrome)
         fi
         for browser in "${BROWSERS[@]}"
         do
@@ -45,7 +46,7 @@ if [[ "$TEST" == *"Replay"* ]]; then
             else
                 LATENCY=180
             fi
-                docker run $DOCKER_SETUP -e REPLAY=true -e LATENCY=$LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE -b $browser $file
+                docker run $DOCKER_SETUP_WPR -e REPLAY=true -e LATENCY=$LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE -b $browser $file
                 control
         done
     done

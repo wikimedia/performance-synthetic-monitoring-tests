@@ -7,7 +7,7 @@
       "alias": "100"
     },
     "visualElements": true,
-    "iterations": 11,
+    "iterations": 21,
     "browser": "chrome",
     "video": true,
     "visualMetric": true,
@@ -53,5 +53,9 @@
     "addSlugToKey": true,
     "messages": ["pageSummary", "run"]
   },
-  "copyLatestFilesToBaseGraphiteNamespace": true
+  "copyLatestFilesToBaseGraphiteNamespace": true,
+  "compare": {
+    "saveBaseline": true,
+    "baselinePath": "/baseline"
+  }
 }
