@@ -51,7 +51,6 @@
   },
   "copyLatestFilesToBaseGraphiteNamespace": true,
   "compare": {
-    "saveBaseline": true,
     "baselinePath": "/baseline"
   }
 }
