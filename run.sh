@@ -42,13 +42,17 @@ if [[ "$TEST" == *"Replay"* ]]; then
             [[ -f "$CONFIG_FILE" ]] && echo "Using config file $CONFIG_FILE" for $file || (echo "Missing config file $CONFIG_FILE for $file" && exit 1)
             # See https://phabricator.wikimedia.org/T282517
             if [[ $TEST == *"Mobile"* ]]; then
-                LATENCY=220
+                LATENCY="LATENCY=220"
             else
-                LATENCY=180
+                LATENCY="LATENCY=180"
+            fi
+            # Lets test out no latency on one of the servers
+            if [[ $TEST == *"Instant2"* ]]; then
+                LATENCY=""
             fi
             while IFS= read -r url || [ -n "$url" ]
             do
-                docker run $DOCKER_SETUP_WPR -e REPLAY=true -e LATENCY=$LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE -b $browser $url
+                docker run $DOCKER_SETUP_WPR -e REPLAY=true -e $LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE -b $browser $url
                 control
             done < "$file"
         done
