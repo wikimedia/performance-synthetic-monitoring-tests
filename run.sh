@@ -33,7 +33,7 @@ if [[ "$TEST" == *"Replay"* ]]; then
         else
             BROWSERS=(chrome)
         fi
-        
+        EXTRAS=""
         FILENAME=$(basename -- "$file")
         FILENAME_WITHOUT_EXTENSION="${FILENAME%.*}"
         POTENTIAL_CONFIG_FILE="config/$TEST/$FILENAME_WITHOUT_EXTENSION.json"
@@ -52,9 +52,17 @@ if [[ "$TEST" == *"Replay"* ]]; then
         if [[ $TEST == *"InstantFirefox"* ]]; then
             LATENCY=""
         fi
+        # All instant tests use baseline, so use that 
+        # to have baseline Sundays.
+        if [[ $TEST == *"Instant"* ]]; then
+            DOW=$(date +"%a")
+            if [[ $DOW == "Sunday" ]]; then
+                EXTRAS="--compare.saveBaseline true"
+            fi
+        fi
         while IFS= read -r url || [ -n "$url" ]
         do
-            docker run $DOCKER_SETUP_WPR -e REPLAY=true $LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE $url
+            docker run $DOCKER_SETUP_WPR -e REPLAY=true $LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE $EXTRAS $url
             control
         done < "$file" 
     done
