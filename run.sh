@@ -50,6 +50,10 @@ if [[ "$TEST" == *"Replay"* ]]; then
             if [[ $TEST == *"Instant2"* ]]; then
                 LATENCY=""
             fi
+            if [[ $TEST == *"InstantFirefox"* ]]; then
+                LATENCY=""
+                BROWSERS=(firefox)
+            fi
             while IFS= read -r url || [ -n "$url" ]
             do
                 docker run $DOCKER_SETUP_WPR -e REPLAY=true $LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE -b $browser $url
