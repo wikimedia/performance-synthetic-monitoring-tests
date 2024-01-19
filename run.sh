@@ -54,7 +54,7 @@ if [[ "$TEST" == *"Replay"* ]]; then
         fi
         while IFS= read -r url || [ -n "$url" ]
         do
-            docker run $DOCKER_SETUP_WPR -e REPLAY=true $LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE -b $browser $url
+            docker run $DOCKER_SETUP_WPR -e REPLAY=true $LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE $url
             control
         done < "$file" 
     done
