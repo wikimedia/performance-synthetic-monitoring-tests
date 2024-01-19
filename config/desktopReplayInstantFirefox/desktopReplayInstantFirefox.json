@@ -1,50 +1,55 @@
 {
     "extends": "/config/secrets.json",
     "browsertime": {
-      "connectivity": {
-        "engine": "external",
-        "profile": "custom",
-        "alias": "0"
-      },
-      "visualElements": true,
-      "iterations": 21,
-      "browser": "firefox",
-      "video": true,
-      "visualMetric": true,
-      "cacheClearRaw": true,
-      "viewPort": "1920x1080",
-      "firefox": {
-          "acceptInsecureCerts": true,
-          "bidihar": true
-      },
-      "videoParams": {
-        "filmstripFullSize": false,
-        "thumbsize": 800
-      }
+        "connectivity": {
+            "engine": "external",
+            "profile": "custom",
+            "alias": "0"
+        },
+        "visualElements": true,
+        "iterations": 21,
+        "browser": "firefox",
+        "video": true,
+        "visualMetric": true,
+        "cacheClearRaw": true,
+        "viewPort": "1920x1080",
+        "firefox": {
+            "acceptInsecureCerts": true,
+            "bidihar": true
+        },
+        "videoParams": {
+            "filmstripFullSize": false,
+            "thumbsize": 800
+        }
     },
     "utc": true,
     "gzipHAR": true,
     "html": {
-      "fetchHARFiles": true,
-      "compareURL": "https://compare.sitespeed.io/"
+        "fetchHARFiles": true,
+        "compareURL": "https://compare.sitespeed.io/"
     },
     "screenshot": {
-      "type": "jpg"
+        "type": "jpg"
     },
     "plugins": {
-      "remove": ["thirdparty", "coach"]
+        "remove": [
+            "thirdparty",
+            "coach"
+        ]
     },
     "slug": "webpagereplay",
     "graphite": {
-      "namespace": "sitespeed_io.desktop",
-      "annotationRetentionMinutes": 60,
-      "addSlugToKey": true,
-      "messages": ["pageSummary", "run"]
+        "namespace": "sitespeed_io.desktop",
+        "annotationRetentionMinutes": 60,
+        "addSlugToKey": true,
+        "messages": [
+            "pageSummary",
+            "run"
+        ]
     },
     "copyLatestFilesToBaseGraphiteNamespace": true,
     "compare": {
-      "baselinePath": "/baseline",
-      "saveBaseline": true
+        "baselinePath": "/baseline",
+        "saveBaseline": true
     }
-  }
-  
+}
