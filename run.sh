@@ -56,7 +56,7 @@ if [[ "$TEST" == *"Replay"* ]]; then
         # to have baseline Sundays.
         if [[ $TEST == *"Instant"* ]]; then
             DOW=$(date +"%a")
-            if [[ $DOW == "Sunday" ]]; then
+            if [[ $DOW == "Sun" ]]; then
                 EXTRAS="--compare.saveBaseline true"
             fi
         fi
