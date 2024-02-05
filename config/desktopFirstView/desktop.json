@@ -1,6 +1,7 @@
 {
   "extends": "/config/secrets.json",
   "browsertime": {
+    "pageCompleteCheckNetworkIdle": true,
     "timeouts": {
       "pageLoad": 60000,
       "pageCompleteCheck": 60000
@@ -33,9 +34,6 @@
     },
     "viewPort": "1920x1080"
   },
-  "pageLoadStrategy": "none",
-  "pageCompleteCheckStartWait": 5000,
-  "pageCompleteCheckPollTimeout": 1000,
   "cpu": true,
   "utc": true,
   "gzipHAR": true,
