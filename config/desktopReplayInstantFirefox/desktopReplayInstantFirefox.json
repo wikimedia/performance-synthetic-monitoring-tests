@@ -15,7 +15,8 @@
         "viewPort": "1920x1080",
         "firefox": {
             "acceptInsecureCerts": true,
-            "bidihar": true
+            "bidihar": true,
+            "disableBrowsertimeExtension": true
         },
         "videoParams": {
             "filmstripFullSize": false,
