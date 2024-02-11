@@ -52,14 +52,13 @@ if [[ "$TEST" == *"Replay"* ]]; then
         if [[ $TEST == *"InstantFirefox"* ]]; then
             LATENCY=""
         fi
-        # All instant tests use baseline, so use that 
-        # to have baseline Sundays.
-        if [[ $TEST == *"Instant"* ]]; then
-            DOW=$(date +"%a")
-            if [[ $DOW == "Sun" ]]; then
-                EXTRAS="--compare.saveBaseline true"
-            fi
+        # All WebPageReplay tests use baseline, 
+        # and on Sundays we re-baseline!
+        DOW=$(date +"%a")
+        if [[ $DOW == "Sun" ]]; then
+            EXTRAS="--compare.saveBaseline true"
         fi
+
         while IFS= read -r url || [ -n "$url" ]
         do
             docker run $DOCKER_SETUP_WPR -e REPLAY=true $LATENCY $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE $EXTRAS $url
