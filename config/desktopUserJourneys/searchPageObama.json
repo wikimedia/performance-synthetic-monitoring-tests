@@ -1,5 +1,0 @@
-{
-  "extends": "./config/desktopFirstView/desktop.json",
-  "slug": "userJourneySearchPageObama",
-  "multi": true
-}

@@ -1,5 +1,0 @@
-{
-  "extends": "./config/emulatedMobileFirstView/emulatedMobile.json",
-  "slug": "userJourneySearchPageObama",
-  "multi": true
-}
