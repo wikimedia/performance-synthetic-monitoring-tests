@@ -4,7 +4,7 @@
     "connectivity": {
       "engine": "external",
       "profile": "custom",
-      "alias": "100"
+      "alias": "0"
     },
     "visualElements": true,
     "iterations": 21,
@@ -12,25 +12,25 @@
     "video": true,
     "visualMetric": true,
     "cacheClearRaw": true,
+    "viewPort": "1920x1080",
     "chrome": {
       "cleanUserDataDir": true,
       "collectConsoleLog": true,
-      "CPUThrottlingRate": 2,
       "includeResponseBodies": "all",
       "enableTraceScreenshots": true,
+      "traceCategory": ["disabled-by-default-v8.cpu_profiler"],
       "args": [
         "--ignore-certificate-errors-spki-list=PhrPvGIaAMmd29hj8BCZOq096yj7uMpRNHpn5PDxI6I=",
         "--user-data-dir=/tmp/google-chrome-wpr"
       ]
-    },
+    }, 
     "videoParams": {
       "filmstripFullSize": false,
-      "thumbsize": 600
+      "thumbsize": 800
     }
   },
   "cpu": true,
   "utc": true,
-  "mobile": true,
   "gzipHAR": true,
   "html": {
     "fetchHARFiles": true,
@@ -44,13 +44,14 @@
   },
   "slug": "webpagereplay",
   "graphite": {
-    "namespace": "sitespeed_io.emulatedMobile",
+    "namespace": "sitespeed_io.desktop",
     "annotationRetentionMinutes": 60,
     "addSlugToKey": true,
     "messages": ["pageSummary", "run"]
   },
   "copyLatestFilesToBaseGraphiteNamespace": true,
   "compare": {
-    "baselinePath": "/baseline"
+    "baselinePath": "/baseline",
+    "saveBaseline": true
   }
 }
