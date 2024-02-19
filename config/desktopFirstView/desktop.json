@@ -2,10 +2,6 @@
   "extends": "/config/secrets.json",
   "browsertime": {
     "pageCompleteCheckNetworkIdle": true,
-    "timeouts": {
-      "pageLoad": 60000,
-      "pageCompleteCheck": 60000
-    },
     "connectivity": {
       "engine": "throttle",
       "profile": "cable"
@@ -28,9 +24,8 @@
       "thumbsize": 800
     },
     "firefox": {
-      "includeResponseBodies": "all",
       "disableBrowsertimeExtension": true,
-      "mozillaProPreferences": true
+      "bidihar": true
     },
     "viewPort": "1920x1080"
   },
