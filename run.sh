@@ -4,12 +4,13 @@ DOCKER_CONTAINER=sitespeedio/sitespeed.io:$VERSION
 DOCKER_SETUP="--cap-add=NET_ADMIN  --shm-size=2g --rm -v /config:/config -v "$(pwd)":/sitespeed.io -v /etc/localtime:/etc/localtime:ro -e MAX_OLD_SPACE_SIZE=3072 --name sitespeedio"
 DOCKER_SETUP_WPR="--cap-add=NET_ADMIN  --shm-size=2g --rm -v /config:/config -v /baseline/:/baseline -v "$(pwd)":/sitespeed.io -v /etc/localtime:/etc/localtime:ro -e MAX_OLD_SPACE_SIZE=3072 --name sitespeedio"
 
+# Run test direct on Ubuntu
 for file in tests/$TEST/*.{txt,cjs} ; do
     [ -e "$file" ] || continue
     if [[ $TEST == *"Mobile"* ]]; then
         BROWSERS=(chrome)
     else
-        BROWSERS=(chrome firefox)
+        BROWSERS=(chrome)
     fi
     for browser in "${BROWSERS[@]}" ; do
         FILENAME=$(basename -- "$file")
@@ -17,10 +18,7 @@ for file in tests/$TEST/*.{txt,cjs} ; do
         POTENTIAL_CONFIG_FILE="config/$TEST/$FILENAME_WITHOUT_EXTENSION.json"
         [[ -f "$POTENTIAL_CONFIG_FILE" ]] && CONFIG_FILE="$POTENTIAL_CONFIG_FILE" || CONFIG_FILE="config/$TEST/$TEST.json"
         [[ -f "$CONFIG_FILE" ]] && echo "Using config file $CONFIG_FILE" for $file || (echo "Missing config file $CONFIG_FILE for $file" && exit 1)
-        # On the new Hetzner cloud instances we use the same framrate for the video
-        # for both Chrome/Firefox and emulated mobile
-        EXTRAS="--browsertime.videoParams.framerate 10"
-        docker run $DOCKER_SETUP $DOCKER_CONTAINER --config $CONFIG_FILE -b $browser $EXTRAS $file 
+        sitespeed.io --config $CONFIG_FILE -b $browser $EXTRAS $file 
         control
     done
 done

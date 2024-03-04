@@ -4,7 +4,7 @@
     "pageCompleteCheckNetworkIdle": true,
     "connectivity": {
       "engine": "throttle",
-      "profile": "cable"
+      "profile": "4g"
     },
     "visualElements": true,
     "iterations": 5,
