@@ -10,6 +10,7 @@
       "profile": "4g"
     },
     "visualElements": true,
+    "flushDNS": true,
     "iterations": 3,
     "browser": "chrome",
     "video": true,

@@ -13,6 +13,7 @@
     "visualMetric": true,
     "timeToSettle": 5000,
     "delay": 5000,
+    "flushDNS": true,
     "chrome": {
       "collectConsoleLog": true,
       "enableTraceScreenshots": true,

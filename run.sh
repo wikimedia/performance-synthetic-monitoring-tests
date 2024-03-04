@@ -18,7 +18,7 @@ for file in tests/$TEST/*.{txt,cjs} ; do
         POTENTIAL_CONFIG_FILE="config/$TEST/$FILENAME_WITHOUT_EXTENSION.json"
         [[ -f "$POTENTIAL_CONFIG_FILE" ]] && CONFIG_FILE="$POTENTIAL_CONFIG_FILE" || CONFIG_FILE="config/$TEST/$TEST.json"
         [[ -f "$CONFIG_FILE" ]] && echo "Using config file $CONFIG_FILE" for $file || (echo "Missing config file $CONFIG_FILE for $file" && exit 1)
-        sitespeed.io --config $CONFIG_FILE -b $browser $EXTRAS $file 
+        sitespeed.io --config $CONFIG_FILE --xvfb -b $browser $EXTRAS $file 
         control
     done
 done
