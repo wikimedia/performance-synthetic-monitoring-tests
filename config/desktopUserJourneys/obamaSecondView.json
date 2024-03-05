@@ -1,5 +1,5 @@
 {
-  "extends": "./config/desktopFirstView/desktop.json",
+  "extends": "./config/desktopFirstView/desktopFirstView.json",
   "slug": "warmCache",
   "multi": true,
   "browsertime": {

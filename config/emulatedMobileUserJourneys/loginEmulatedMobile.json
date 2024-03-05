@@ -1,5 +1,5 @@
 {
-  "extends": "./config/emulatedMobileFirstView/emulatedMobile.json",
+  "extends": "./config/emulatedMobileFirstView/emulatedMobileFirstView.json",
   "slug": "userJourneyLogin",
   "multi": true,
   "browsertime": {
