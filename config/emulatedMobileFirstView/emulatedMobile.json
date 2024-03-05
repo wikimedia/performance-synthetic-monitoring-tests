@@ -1,10 +1,7 @@
 {
   "extends": "/config/secrets.json",
   "browsertime": {
-    "timeouts": {
-      "pageLoad": 60000,
-      "pageCompleteCheck": 60000
-    },
+    "pageCompleteCheckNetworkIdle": true,
     "connectivity": {
       "engine": "throttle",
       "profile": "4g"
@@ -15,11 +12,8 @@
     "browser": "chrome",
     "video": true,
     "visualMetrics": true,
-    "timeToSettle": 5000,
-    "delay": 5000,
     "videoParams": {
-      "framerate": 10,
-      "thumbsize": 600
+      "thumbsize": 800
     },
     "chrome": {
       "CPUThrottlingRate": 7,
@@ -30,9 +24,6 @@
   },
   "cpu": true,
   "utc": true,
-  "pageLoadStrategy": "none",
-  "pageCompleteCheckStartWait": 4000,
-  "pageCompleteCheckPollTimeout": 1000,
   "gzipHAR": true,
   "html": {
     "fetchHARFiles": true,

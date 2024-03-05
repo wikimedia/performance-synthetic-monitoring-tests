@@ -11,8 +11,6 @@
     "browser": "chrome",
     "video": true,
     "visualMetrics": true,
-    "timeToSettle": 5000,
-    "delay": 5000,
     "flushDNS": true,
     "chrome": {
       "collectConsoleLog": true,
@@ -21,7 +19,6 @@
       "traceCategory": ["disabled-by-default-v8.cpu_profiler"]
     },
     "videoParams": {
-      "framerate": 10,
       "thumbsize": 800
     },
     "firefox": {
