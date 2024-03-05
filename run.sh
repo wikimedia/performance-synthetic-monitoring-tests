@@ -10,7 +10,7 @@ for file in tests/$TEST/*.{txt,cjs} ; do
     if [[ $TEST == *"Mobile"* ]]; then
         BROWSERS=(chrome)
     else
-        BROWSERS=(chrome)
+        BROWSERS=(chrome firefox)
     fi
     for browser in "${BROWSERS[@]}" ; do
         FILENAME=$(basename -- "$file")
