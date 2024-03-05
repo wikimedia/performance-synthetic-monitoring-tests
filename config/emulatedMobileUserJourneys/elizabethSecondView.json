@@ -1,5 +1,0 @@
-{
-  "extends": "./config/emulatedMobileFirstView/emulatedMobile.json",
-  "slug": "warmCache",
-  "multi": true
-}
