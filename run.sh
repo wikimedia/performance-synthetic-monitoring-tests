@@ -14,11 +14,22 @@ for file in tests/$TEST/*.{txt,cjs} ; do
     fi
     for browser in "${BROWSERS[@]}" ; do
         FILENAME=$(basename -- "$file")
+        EXTENSION="${FILENAME##*.}"
         FILENAME_WITHOUT_EXTENSION="${FILENAME%.*}"
         POTENTIAL_CONFIG_FILE="config/$TEST/$FILENAME_WITHOUT_EXTENSION.json"
         [[ -f "$POTENTIAL_CONFIG_FILE" ]] && CONFIG_FILE="$POTENTIAL_CONFIG_FILE" || CONFIG_FILE="config/$TEST/$TEST.json"
         [[ -f "$CONFIG_FILE" ]] && echo "Using config file $CONFIG_FILE" for $file || (echo "Missing config file $CONFIG_FILE for $file" && exit 1)
-        sitespeed.io --config $CONFIG_FILE --xvfb -b $browser $EXTRAS $file 
+        ## If its a user journey
+        if [[ $EXTENSION == "cjs" ]]; then
+            sitespeed.io --config $CONFIG_FILE --xvfb -b $browser $file
+        else
+        ## Test all urls one by one
+            while IFS= read -r url || [ -n "$url" ]
+                do
+                    sitespeed.io --config $CONFIG_FILE --xvfb -b $browser $url
+                    control
+                done < "$file"
+        fi
         control
     done
 done
