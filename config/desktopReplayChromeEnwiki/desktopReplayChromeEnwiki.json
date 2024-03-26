@@ -18,7 +18,8 @@
       "collectConsoleLog": true,
       "includeResponseBodies": "all",
       "enableTraceScreenshots": true,
-      "traceCategory": ["disabled-by-default-v8.cpu_profiler"],
+      "trace": true,
+      "traceCategories": "-*,disabled-by-default-lighthouse,v8,v8.execute,blink.user_timing,devtools.timeline,disabled-by-default-devtools.timeline,disabled-by-default-devtools.timeline.stack,disabled-by-default-v8.cpu_profiler",
       "args": [
         "--ignore-certificate-errors-spki-list=PhrPvGIaAMmd29hj8BCZOq096yj7uMpRNHpn5PDxI6I=",
         "--user-data-dir=/tmp/google-chrome-wpr"
@@ -29,7 +30,6 @@
       "thumbsize": 800
     }
   },
-  "cpu": true,
   "utc": true,
   "gzipHAR": true,
   "html": {
