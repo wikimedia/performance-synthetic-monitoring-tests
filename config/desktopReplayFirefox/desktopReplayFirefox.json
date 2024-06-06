@@ -9,8 +9,9 @@
         "visualElements": true,
         "iterations": 21,
         "browser": "firefox",
-        "video": true,
-        "visualMetric": true,
+        "video": false,
+        "enableVideoRun": true,
+        "visualMetrics": true,
         "cacheClearRaw": true,
         "viewPort": "1920x1080",
         "firefox": {
