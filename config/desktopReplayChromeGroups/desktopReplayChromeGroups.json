@@ -11,7 +11,7 @@
     "browser": "chrome",
     "video": false,
     "enableVideoRun": true,
-    "visualMetric": true,
+    "visualMetrics": true,
     "cacheClearRaw": true,
     "viewPort": "1920x1080",
     "videoParams": {
