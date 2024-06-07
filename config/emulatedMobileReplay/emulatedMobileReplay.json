@@ -9,7 +9,8 @@
     "visualElements": true,
     "iterations": 21,
     "browser": "chrome",
-    "video": true,
+    "video": false,
+    "enableVideoRun": true,
     "visualMetric": true,
     "cacheClearRaw": true,
     "chrome": {
