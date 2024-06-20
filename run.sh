@@ -21,11 +21,13 @@ for file in tests/$TEST/*.{txt,cjs} ; do
         [[ -f "$CONFIG_FILE" ]] && echo "Using config file $CONFIG_FILE" for $file || (echo "Missing config file $CONFIG_FILE for $file" && exit 1)
         ## If its a user journey
         if [[ $EXTENSION == "cjs" ]]; then
+            echo "Running test for $file using $browser and $CONFIG_FILE"
             sitespeed.io --config $CONFIG_FILE --xvfb -b $browser $file
         else
         ## Test all urls one by one
             while IFS= read -r url || [ -n "$url" ]
                 do
+                    echo "Running test for $url using $browser and $CONFIG_FILE"
                     sitespeed.io --config $CONFIG_FILE --xvfb -b $browser $url
                     control
                 done < "$file"
