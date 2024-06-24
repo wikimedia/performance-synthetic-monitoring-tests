@@ -22,13 +22,13 @@ for file in tests/$TEST/*.{txt,cjs} ; do
         ## If its a user journey
         if [[ $EXTENSION == "cjs" ]]; then
             echo "Running test for $file using $browser and $CONFIG_FILE"
-            sitespeed.io --config $CONFIG_FILE --xvfb -b $browser $file
+            sitespeed.io --config $CONFIG_FILE --xvfb --browsertime.browser $browser $file
         else
         ## Test all urls one by one
             while IFS= read -r url || [ -n "$url" ]
                 do
                     echo "Running test for $url using $browser and $CONFIG_FILE"
-                    sitespeed.io --config $CONFIG_FILE --xvfb -b $browser $url
+                    sitespeed.io --config $CONFIG_FILE --xvfb --browsertime.browser $browser $url
                     control
                 done < "$file"
         fi
