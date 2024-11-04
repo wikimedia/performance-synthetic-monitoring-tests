@@ -2,6 +2,9 @@
   "extends": "/config/secrets.json",
   "browsertime": {
     "pageCompleteCheckNetworkIdle": true,
+    "timeouts": {
+      "networkIdle" : 10000
+    },
     "connectivity": {
       "engine": "throttle",
       "profile": "4g"
