@@ -59,6 +59,8 @@ do
     if [ "$LINES_CHANGED" -gt 0 ];then
       # Remove the container since it could be a new version
       # See T240095
+      # We also prune here so we have a easy way of cleaning up containers 
+      # on code change
       docker system prune --all --volumes -f
       git pull
     fi

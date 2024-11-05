@@ -59,5 +59,6 @@ if [[ "$TEST" == *"Replay"* ]]; then
         done < "$file" 
     done
 fi
-docker volume prune -f
+# Make sure we have the latest container next time
+docker pull $DOCKER_CONTAINER
 sleep 20
