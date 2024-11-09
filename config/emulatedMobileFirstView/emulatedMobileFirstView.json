@@ -22,7 +22,8 @@
       "CPUThrottlingRate": 7,
       "collectConsoleLog": true,
       "includeResponseBodies": "all",
-      "enableTraceScreenshots": true
+      "enableTraceScreenshots": true,
+      "traceCategory": ["disabled-by-default-v8.cpu_profiler"]
     }
   },
   "cpu": true,
