@@ -11,6 +11,7 @@
         "browser": "firefox",
         "video": false,
         "enableVideoRun": true,
+        "enableProfileRun": true,
         "visualMetrics": true,
         "cacheClearRaw": true,
         "viewPort": "1920x1080",
