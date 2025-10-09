@@ -4,7 +4,7 @@ module.exports = async function ( context, commands ) {
 
 	// We start by navigating to the login page.
 	await commands.measure.start(
-		'https://en.m.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Main+Page', 'LoginPage'
+		'https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Main+Page', 'LoginPage'
 	);
 
 	// When we fill in a input field/click on a link we wanna
@@ -34,12 +34,12 @@ module.exports = async function ( context, commands ) {
 		await commands.wait.byTime( 21000 );
 		await commands.js.run( 'document.body.innerHTML = ""; document.body.style.backgroundColor = "white";' );
 		// Measure the Barack Obama page as a logged in user
-		await commands.measure.start( 'https://en.m.wikipedia.org/wiki/Barack_Obama' );
+		await commands.measure.start( 'https://en.wikipedia.org/wiki/Barack_Obama' );
 		await commands.wait.byTime( 21000 );
 		await commands.js.run( 'document.body.innerHTML = ""; document.body.style.backgroundColor = "white";' );
 		// And then measure the Facebook page
 		return commands.measure.start(
-			'https://en.m.wikipedia.org/wiki/Facebook'
+			'https://en.wikipedia.org/wiki/Facebook'
 		);
 	} catch ( e ) {
 		context.log.error( e );
