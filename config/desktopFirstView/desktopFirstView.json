@@ -10,7 +10,7 @@
       "profile": "4g"
     },
     "visualElements": true,
-    "iterations": 5,
+    "iterations": 7,
     "browser": "chrome",
     "video": true,
     "visualMetrics": true,
