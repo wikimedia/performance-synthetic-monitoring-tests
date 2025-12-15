@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION=38
+VERSION=39
 DOCKER_CONTAINER=sitespeedio/sitespeed.io:$VERSION
 DOCKER_SETUP="--cap-add=NET_ADMIN  --shm-size=2g --rm -v /config:/config -v "$(pwd)":/sitespeed.io -v /etc/localtime:/etc/localtime:ro -e MAX_OLD_SPACE_SIZE=3072 --name sitespeedio"
 DOCKER_SETUP_WPR="--cap-add=NET_ADMIN  --shm-size=2g --rm -v /config:/config -v /baseline/:/baseline -v "$(pwd)":/sitespeed.io -v /etc/localtime:/etc/localtime:ro -e MAX_OLD_SPACE_SIZE=3072 --name sitespeedio"
@@ -45,7 +45,7 @@ if [[ "$TEST" == *"Replay"* ]]; then
         POTENTIAL_CONFIG_FILE="config/$TEST/$FILENAME_WITHOUT_EXTENSION.json"
         [[ -f "$POTENTIAL_CONFIG_FILE" ]] && CONFIG_FILE="$POTENTIAL_CONFIG_FILE" || CONFIG_FILE="config/$TEST/$TEST.json"
         [[ -f "$CONFIG_FILE" ]] && echo "Using config file $CONFIG_FILE" for $file || (echo "Missing config file $CONFIG_FILE for $file" && exit 1)
-        # All WebPageReplay tests use baseline, 
+        # All WebPageReplay tests use baseline,
         # and on Sundays we re-baseline!
         DOW=$(date +"%a")
         if [[ $DOW == "Sun" ]]; then
@@ -56,7 +56,7 @@ if [[ "$TEST" == *"Replay"* ]]; then
         do
             docker run $DOCKER_SETUP_WPR -e REPLAY=true $DOCKER_CONTAINER $NAMESPACE --config $CONFIG_FILE $EXTRAS $url
             control
-        done < "$file" 
+        done < "$file"
     done
 fi
 # Make sure we have the latest container next time
