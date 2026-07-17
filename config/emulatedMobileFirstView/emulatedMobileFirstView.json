@@ -27,6 +27,7 @@
     }
   },
   "cpu": true,
+  "enableProfileRun": true,
   "utc": true,
   "gzipHAR": true,
   "html": {

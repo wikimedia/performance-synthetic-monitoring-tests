@@ -30,6 +30,7 @@
     },
     "viewPort": "1920x1080"
   },
+  "enableProfileRun": true,
   "cpu": true,
   "utc": true,
   "gzipHAR": true,
