@@ -3,7 +3,7 @@
   "browsertime": {
     "pageCompleteCheckNetworkIdle": true,
     "timeouts": {
-      "networkIdle" : 10000
+      "networkIdle" : 5000
     },
     "connectivity": {
       "engine": "throttle",
@@ -22,7 +22,7 @@
       "traceCategory": ["disabled-by-default-v8.cpu_profiler"]
     },
     "videoParams": {
-      "thumbsize": 800
+      "thumbsize": 400
     },
     "firefox": {
       "disableBrowsertimeExtension": true,

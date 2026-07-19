@@ -3,7 +3,7 @@
   "browsertime": {
     "pageCompleteCheckNetworkIdle": true,
     "timeouts": {
-      "networkIdle" : 10000
+      "networkIdle" : 5000
     },
     "connectivity": {
       "engine": "throttle",
@@ -16,7 +16,7 @@
     "video": true,
     "visualMetrics": true,
     "videoParams": {
-      "thumbsize": 800
+      "thumbsize": 400
     },
     "chrome": {
       "CPUThrottlingRate": 7,
