@@ -16,7 +16,9 @@
     "video": true,
     "visualMetrics": true,
     "videoParams": {
-      "thumbsize": 400
+      "thumbsize": 800,
+      "filmstripDiff": true,
+      "noiseTolerance": 0.05
     },
     "chrome": {
       "CPUThrottlingRate": 7,

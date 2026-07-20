@@ -22,7 +22,9 @@
       "traceCategory": ["disabled-by-default-v8.cpu_profiler"]
     },
     "videoParams": {
-      "thumbsize": 400
+      "thumbsize": 800,
+      "filmstripDiff": true,
+      "noiseTolerance": 0.05
     },
     "firefox": {
       "disableBrowsertimeExtension": true,
