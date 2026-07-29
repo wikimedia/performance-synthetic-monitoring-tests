@@ -51,7 +51,6 @@
   },
   "copyLatestFilesToBaseGraphiteNamespace": true,
   "compare": {
-    "baselinePath": "/baseline",
-    "testType": "wilcoxon"
+    "baselinePath": "/baseline"
   }
 }
