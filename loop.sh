@@ -67,10 +67,5 @@ do
     for TEST in "${TESTS[@]}"
     do
       source run.sh $TEST
-      result=$?
-      if [ $result -ne 0 ]; then
-          echo 'Stop the loop $result' 
-          exit 0;
-      fi
     done
 done
