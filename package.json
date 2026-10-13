@@ -5,8 +5,7 @@
     "lint:fix": "eslint . --fix --ext .json --ext .cjs"
   },
   "devDependencies": {
-    "eslint": "^6.0.1",
-    "eslint-plugin-json": "^1.4.0",
-    "eslint-config-wikimedia": "^0.12.0"
+    "eslint": "^8.57.1",
+    "eslint-config-wikimedia": "^0.32.6"
   }
 }

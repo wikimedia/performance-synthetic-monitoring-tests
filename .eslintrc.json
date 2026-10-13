@@ -1,10 +1,20 @@
 {
-  "extends": "wikimedia",
-  "parserOptions": {
-    "ecmaVersion": 8
+  "root": true,
+  "extends": "wikimedia/server",
+  "ignorePatterns": ["npm-shrinkwrap.json"],
+  "rules": {
+    "strict": "off"
   },
-  "env": {
-    "node": true
-  },
-  "plugins": ["json"]
+  "overrides": [
+    {
+      "files": ["**/*.json"],
+      "rules": {
+        "array-bracket-spacing": "off",
+        "comma-spacing": "off",
+        "eol-last": "off",
+        "indent": "off",
+        "key-spacing": "off"
+      }
+    }
+  ]
 }
